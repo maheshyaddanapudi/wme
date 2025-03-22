@@ -306,4 +306,16 @@ public class WorkflowHistoryDAO {
             throw new SQLException("Error creating status change history record", e);
         }
     }
+
+    public int deleteHistoryByWorkflowId(UUID workflowInstanceId) throws SQLException {
+        final String sql = "DELETE FROM workflow_history WHERE workflow_instance_id = ?";
+    
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setObject(1, workflowInstanceId);
+            return stmt.executeUpdate();
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Error deleting history for workflow", e);
+            throw e;
+        } 
+    }
 }
