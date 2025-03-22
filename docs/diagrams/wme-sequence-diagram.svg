@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle">Workflow Management Engine - Workflow Lifecycle Sequence Diagram</text>
+  
+  <!-- Actor -->
+  <rect x="80" y="70" width="120" height="40" rx="5" fill="#f9f9f9" stroke="#666666" stroke-width="1.5"/>
+  <text x="140" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Host Application</text>
+  
+  <!-- Host Application Lifeline -->
+  <line x1="140" y1="110" x2="140" y2="850" stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- WorkflowDefinitionAPI -->
+  <rect x="200" y="70" width="140" height="40" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="1.5"/>
+  <text x="270" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">WorkflowDefinitionAPI</text>
+  
+  <!-- WorkflowDefinitionAPI Lifeline -->
+  <line x1="270" y1="110" x2="270" y2="850" stroke="#0099cc" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- WorkflowExecutionAPI -->
+  <rect x="360" y="70" width="140" height="40" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="1.5"/>
+  <text x="430" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">WorkflowExecutionAPI</text>
+  
+  <!-- WorkflowExecutionAPI Lifeline -->
+  <line x1="430" y1="110" x2="430" y2="850" stroke="#0099cc" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- TaskManagementAPI -->
+  <rect x="520" y="70" width="140" height="40" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="1.5"/>
+  <text x="590" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">TaskManagementAPI</text>
+  
+  <!-- TaskManagementAPI Lifeline -->
+  <line x1="590" y1="110" x2="590" y2="850" stroke="#0099cc" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- WorkflowStateManager -->
+  <rect x="680" y="70" width="140" height="40" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="750" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">WorkflowStateManager</text>
+  
+  <!-- WorkflowStateManager Lifeline -->
+  <line x1="750" y1="110" x2="750" y2="850" stroke="#009933" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- TaskHandler -->
+  <rect x="840" y="70" width="140" height="40" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="910" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">TaskHandler</text>
+  
+  <!-- TaskHandler Lifeline -->
+  <line x1="910" y1="110" x2="910" y2="850" stroke="#ff9933" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- WorkflowExecutionSweeper -->
+  <rect x="1000" y="70" width="140" height="40" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="1070" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">ExecutionSweeper</text>
+  
+  <!-- WorkflowExecutionSweeper Lifeline -->
+  <line x1="1070" y1="110" x2="1070" y2="850" stroke="#ff9933" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Sequence Flow -->
+  
+  <!-- 1. Create Workflow Definition -->
+  <rect x="130" y="140" width="20" height="40" fill="#f9f9f9" stroke="#666666" stroke-width="1"/>
+  <line x1="150" y1="160" x2="260" y2="160" stroke="#666666" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="260,160 250,155 250,165" fill="#666666"/>
+  <text x="205" y="150" font-family="Arial" font-size="12" text-anchor="middle">createDefinition()</text>
+  
+  <rect x="260" y="160" width="20" height="40" fill="#e6f7ff" stroke="#0099cc" stroke-width="1"/>
+  <line x1="280" y1="200" x2="150" y2="200" stroke="#0099cc" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="150,200 160,195 160,205" fill="#0099cc"/>
+  <text x="215" y="220" font-family="Arial" font-size="12" text-anchor="middle">return definition ID</text>
+  
+  <!-- 2. Start Workflow Execution -->
+  <rect x="130" y="260" width="20" height="40" fill="#f9f9f9" stroke="#666666" stroke-width="1"/>
+  <line x1="150" y1="280" x2="420" y2="280" stroke="#666666" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="420,280 410,275 410,285" fill="#666666"/>
+  <text x="285" y="270" font-family="Arial" font-size="12" text-anchor="middle">startWorkflow(definitionId, input)</text>
+  
+  <rect x="420" y="280" width="20" height="60" fill="#e6f7ff" stroke="#0099cc" stroke-width="1"/>
+  <line x1="440" y1="300" x2="740" y2="300" stroke="#0099cc" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="740,300 730,295 730,305" fill="#0099cc"/>
+  <text x="590" y="290" font-family="Arial" font-size="12" text-anchor="middle">decide(workflowId)</text>
+  
+  <rect x="740" y="300" width="20" height="60" fill="#e6ffe6" stroke="#009933" stroke-width="1"/>
+  <line x1="760" y1="320" x2="900" y2="320" stroke="#009933" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="900,320 890,315 890,325" fill="#009933"/>
+  <text x="830" y="310" font-family="Arial" font-size="12" text-anchor="middle">run(firstTask)</text>
+  
+  <rect x="900" y="320" width="20" height="40" fill="#fff2e6" stroke="#ff9933" stroke-width="1"/>
+  <line x1="920" y1="360" x2="760" y2="360" stroke="#ff9933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="760,360 770,355 770,365" fill="#ff9933"/>
+  
+  <line x1="740" y1="360" x2="440" y2="360" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="440,360 450,355 450,365" fill="#009933"/>
+  
+  <line x1="420" y1="340" x2="150" y2="340" stroke="#0099cc" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="150,340 160,335 160,345" fill="#0099cc"/>
+  <text x="285" y="360" font-family="Arial" font-size="12" text-anchor="middle">return workflow instance ID</text>
+  
+  <!-- 3. Human Task Execution -->
+  <rect x="130" y="400" width="20" height="40" fill="#f9f9f9" stroke="#666666" stroke-width="1"/>
+  <line x1="150" y1="420" x2="580" y2="420" stroke="#666666" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="580,420 570,415 570,425" fill="#666666"/>
+  <text x="365" y="410" font-family="Arial" font-size="12" text-anchor="middle">completeTask(taskId, output)</text>
+  
+  <rect x="580" y="420" width="20" height="80" fill="#e6f7ff" stroke="#0099cc" stroke-width="1"/>
+  <line x1="600" y1="440" x2="900" y2="440" stroke="#0099cc" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="900,440 890,435 890,445" fill="#0099cc"/>
+  <text x="750" y="430" font-family="Arial" font-size="12" text-anchor="middle">completeAndClose(taskId, output)</text>
+  
+  <rect x="900" y="440" width="20" height="60" fill="#fff2e6" stroke="#ff9933" stroke-width="1"/>
+  
+  <!-- Queue for state management -->
+  <line x1="920" y1="480" x2="1060" y2="480" stroke="#ff9933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="1060,480 1050,475 1050,485" fill="#ff9933"/>
+  <text x="990" y="470" font-family="Arial" font-size="12" text-anchor="middle">add to execution queue</text>
+  
+  <line x1="900" y1="500" x2="600" y2="500" stroke="#ff9933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="600,500 610,495 610,505" fill="#ff9933"/>
+  
+  <line x1="580" y1="500" x2="150" y2="500" stroke="#0099cc" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="150,500 160,495 160,505" fill="#0099cc"/>
+  <text x="365" y="520" font-family="Arial" font-size="12" text-anchor="middle">return success</text>
+  
+  <!-- 4. Sweeper Processing -->
+  <rect x="1060" y="540" width="20" height="120" fill="#fff2e6" stroke="#ff9933" stroke-width="1"/>
+  <text x="1120" y="555" font-family="Arial" font-size="12" text-anchor="start">polling workflow_execution_queue</text>
+  
+  <line x1="1080" y1="560" x2="740" y2="560" stroke="#ff9933" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="740,560 750,555 750,565" fill="#ff9933"/>
+  <text x="910" y="550" font-family="Arial" font-size="12" text-anchor="middle">decide(workflowId)</text>
+  
+  <rect x="740" y="560" width="20" height="80" fill="#e6ffe6" stroke="#009933" stroke-width="1"/>
+  
+  <!-- Evaluate next task(s) -->
+  <path d="M 760,580 C 790,580 790,600 760,600" stroke="#009933" stroke-width="1.5" fill="none"/>
+  <polygon points="760,600 770,595 770,605" fill="#009933"/>
+  <text x="820" y="590" font-family="Arial" font-size="12" text-anchor="start">evaluate next tasks</text>
+  
+  <line x1="760" y1="620" x2="900" y2="620" stroke="#009933" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="900,620 890,615 890,625" fill="#009933"/>
+  <text x="830" y="610" font-family="Arial" font-size="12" text-anchor="middle">run(nextTask)</text>
+  
+  <rect x="900" y="620" width="20" height="40" fill="#fff2e6" stroke="#ff9933" stroke-width="1"/>
+  
+  <line x1="740" y1="640" x2="1080" y2="640" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="1080,640 1070,635 1070,645" fill="#009933"/>
+  <text x="910" y="660" font-family="Arial" font-size="12" text-anchor="middle">return</text>
+  
+  <!-- 5. Workflow Completion -->
+  <rect x="1060" y="700" width="20" height="100" fill="#fff2e6" stroke="#ff9933" stroke-width="1"/>
+  <text x="1120" y="715" font-family="Arial" font-size="12" text-anchor="start">polling workflow_execution_queue</text>
+  
+  <line x1="1080" y1="720" x2="740" y2="720" stroke="#ff9933" stroke-width="1.5" stroke-dasharray=""/>
+  <polygon points="740,720 750,715 750,725" fill="#ff9933"/>
+  <text x="910" y="710" font-family="Arial" font-size="12" text-anchor="middle">decide(workflowId)</text>
+  
+  <rect x="740" y="720" width="20" height="60" fill="#e6ffe6" stroke="#009933" stroke-width="1"/>
+  
+  <!-- Detect workflow completion -->
+  <path d="M 760,740 C 790,740 790,760 760,760" stroke="#009933" stroke-width="1.5" fill="none"/>
+  <polygon points="760,760 770,755 770,765" fill="#009933"/>
+  <text x="870" y="750" font-family="Arial" font-size="12" text-anchor="start">detect all tasks completed</text>
+  
+  <line x1="740" y1="780" x2="1080" y2="780" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="1080,780 1070,775 1070,785" fill="#009933"/>
+  <text x="910" y="800" font-family="Arial" font-size="12" text-anchor="middle">workflow complete</text>
+  
+  <!-- Status labels -->
+  <rect x="20" y="160" width="90" height="25" rx="3" fill="#e6f2ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="65" y="178" font-family="Arial" font-size="12" text-anchor="middle">NOT_STARTED</text>
+  
+  <rect x="20" y="280" width="90" height="25" rx="3" fill="#ffe6cc" stroke="#ff9933" stroke-width="1"/>
+  <text x="65" y="298" font-family="Arial" font-size="12" text-anchor="middle">RUNNING</text>
+  
+  <rect x="20" y="780" width="90" height="25" rx="3" fill="#e6ffe6" stroke="#009933" stroke-width="1"/>
+  <text x="65" y="798" font-family="Arial" font-size="12" text-anchor="middle">COMPLETED</text>
+</svg>

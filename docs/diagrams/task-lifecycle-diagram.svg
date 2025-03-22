@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle">Task and Task Group Lifecycle Management</text>
+  
+  <!-- Task Lifecycle Section -->
+  <text x="300" y="70" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Individual Task Lifecycle</text>
+  
+  <!-- Task States -->
+  <!-- NOT_STARTED -->
+  <circle cx="150" cy="150" r="50" fill="#e6f2ff" stroke="#0066cc" stroke-width="2"/>
+  <text x="150" y="155" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">NOT_STARTED</text>
+  
+  <!-- IN_PROGRESS -->
+  <circle cx="300" cy="150" r="50" fill="#ffe6cc" stroke="#ff9933" stroke-width="2"/>
+  <text x="300" y="155" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">IN_PROGRESS</text>
+  
+  <!-- Terminal States Group -->
+  <rect x="100" y="230" width="600" height="230" rx="10" fill="#f9f9f9" stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="400" y="255" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Terminal States (Task Type Specific)</text>
+  
+  <!-- COMPLETED -->
+  <circle cx="200" cy="330" r="40" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="200" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">COMPLETED</text>
+  
+  <!-- SUBMITTED -->
+  <circle cx="330" cy="330" r="40" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="330" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">SUBMITTED</text>
+  
+  <!-- APPROVED -->
+  <circle cx="460" cy="330" r="40" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="460" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">APPROVED</text>
+  
+  <!-- REVIEWED -->
+  <circle cx="590" cy="330" r="40" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="590" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">REVIEWED</text>
+  
+  <!-- API_CALL_COMPLETE -->
+  <circle cx="250" cy="420" r="40" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="250" y="415" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">API_CALL</text>
+  <text x="250" y="430" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">COMPLETE</text>
+  
+  <!-- FAILED -->
+  <circle cx="390" cy="420" r="40" fill="#ffe6e6" stroke="#cc0000" stroke-width="2"/>
+  <text x="390" y="425" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">FAILED</text>
+  
+  <!-- EXPIRED -->
+  <circle cx="530" cy="420" r="40" fill="#ffe6e6" stroke="#cc0000" stroke-width="2"/>
+  <text x="530" y="425" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">EXPIRED</text>
+  
+  <!-- Task Type Labels -->
+  <rect x="175" y="380" width="50" height="25" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="200" y="397" font-family="Arial" font-size="10" text-anchor="middle">ToDo</text>
+  
+  <rect x="305" y="380" width="50" height="25" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="330" y="397" font-family="Arial" font-size="10" text-anchor="middle">Submit</text>
+  
+  <rect x="435" y="380" width="50" height="25" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="460" y="397" font-family="Arial" font-size="10" text-anchor="middle">Approve</text>
+  
+  <rect x="565" y="380" width="50" height="25" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="590" y="397" font-family="Arial" font-size="10" text-anchor="middle">Review</text>
+  
+  <rect x="225" y="470" width="50" height="25" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="250" y="487" font-family="Arial" font-size="10" text-anchor="middle">HTTP</text>
+  
+  <!-- Transitions -->
+  <!-- NOT_STARTED to IN_PROGRESS -->
+  <line x1="200" y1="150" x2="250" y2="150" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="250,150 240,145 240,155" fill="#666666"/>
+  <text x="225" y="140" font-family="Arial" font-size="12" text-anchor="middle">run()</text>
+  
+  <!-- IN_PROGRESS to Terminal States -->
+  <line x1="270" y1="185" x2="220" y2="290" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="220,290 220,280 230,285" fill="#666666"/>
+  <text x="225" y="230" font-family="Arial" font-size="12" text-anchor="middle">completeTask()</text>
+  
+  <line x1="300" y1="200" x2="300" y2="290" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="300,290 295,280 305,280" fill="#666666"/>
+  <text x="260" y="245" font-family="Arial" font-size="12" text-anchor="middle">submitTask()</text>
+  
+  <line x1="330" y1="185" x2="430" y2="290" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="430,290 420,285 425,275" fill="#666666"/>
+  <text x="400" y="230" font-family="Arial" font-size="12" text-anchor="middle">approveTask()</text>
+  
+  <line x1="350" y1="165" x2="550" y2="290" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="550,290 540,285 545,275" fill="#666666"/>
+  <text x="500" y="230" font-family="Arial" font-size="12" text-anchor="middle">reviewTask()</text>
+  
+  <line x1="270" y1="190" x2="250" y2="380" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="250,380 247,370 257,373" fill="#666666"/>
+  <text x="230" y="280" font-family="Arial" font-size="12" text-anchor="middle">apiCallComplete()</text>
+  
+  <!-- IN_PROGRESS to FAILED -->
+  <line x1="340" y1="180" x2="390" y2="380" stroke="#cc0000" stroke-width="1.5"/>
+  <polygon points="390,380 385,370 395,372" fill="#cc0000"/>
+  <text x="375" y="280" font-family="Arial" font-size="12" fill="#cc0000" text-anchor="middle">exception/failure</text>
+  
+  <!-- IN_PROGRESS to EXPIRED -->
+  <line x1="350" y1="170" x2="510" y2="380" stroke="#cc0000" stroke-width="1.5"/>
+  <polygon points="510,380 500,375 505,368" fill="#cc0000"/>
+  <text x="450" y="280" font-family="Arial" font-size="12" fill="#cc0000" text-anchor="middle">timeout/expiry</text>
+  
+  <!-- NOT_STARTED to EXPIRED -->
+  <line x1="160" y1="195" x2="490" y2="420" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="490,420 480,417 485,410" fill="#cc0000"/>
+  <text x="320" y="320" font-family="Arial" font-size="12" fill="#cc0000" text-anchor="middle">auto-expiry</text>
+  
+  <!-- Task Group Lifecycle Section -->
+  <text x="900" y="70" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Task Group Lifecycle</text>
+  
+  <!-- Task Group States -->
+  <!-- NOT_STARTED -->
+  <circle cx="750" cy="150" r="50" fill="#e6f2ff" stroke="#0066cc" stroke-width="2"/>
+  <text x="750" y="155" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">NOT_STARTED</text>
+  
+  <!-- IN_PROGRESS -->
+  <circle cx="900" cy="150" r="50" fill="#ffe6cc" stroke="#ff9933" stroke-width="2"/>
+  <text x="900" y="155" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">IN_PROGRESS</text>
+  
+  <!-- BLOCKED -->
+  <circle cx="1050" cy="150" r="50" fill="#ffe6cc" stroke="#ff9933" stroke-width="2"/>
+  <text x="1050" y="155" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">BLOCKED</text>
+  
+  <!-- Terminal States Group -->
+  <rect x="700" y="230" width="500" height="230" rx="10" fill="#f9f9f9" stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="950" y="255" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Terminal States</text>
+  
+  <!-- COMPLETED -->
+  <circle cx="800" cy="330" r="40" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="800" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">COMPLETED</text>
+  
+  <!-- FAILED -->
+  <circle cx="950" cy="330" r="40" fill="#ffe6e6" stroke="#cc0000" stroke-width="2"/>
+  <text x="950" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">FAILED</text>
+  
+  <!-- SKIPPED -->
+  <circle cx="1100" cy="330" r="40" fill="#e6e6e6" stroke="#666666" stroke-width="2"/>
+  <text x="1100" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">SKIPPED</text>
+  
+  <!-- Group Type Labels -->
+  <rect x="770" y="400" width="70" height="35" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="805" y="422" font-family="Arial" font-size="12" text-anchor="middle">Horizontal</text>
+  
+  <rect x="920" y="400" width="70" height="35" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="955" y="422" font-family="Arial" font-size="12" text-anchor="middle">Vertical</text>
+  
+  <!-- Transitions -->
+  <!-- NOT_STARTED to IN_PROGRESS -->
+  <line x1="800" y1="150" x2="850" y2="150" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="850,150 840,145 840,155" fill="#666666"/>
+  <text x="825" y="140" font-family="Arial" font-size="12" text-anchor="middle">run()</text>
+  
+  <!-- IN_PROGRESS to BLOCKED -->
+  <line x1="950" y1="150" x2="1000" y2="150" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="1000,150 990,145 990,155" fill="#666666"/>
+  <text x="975" y="140" font-family="Arial" font-size="12" text-anchor="middle">waiting for dependencies</text>
+  
+  <!-- BLOCKED to IN_PROGRESS -->
+  <line x1="1000" y1="170" x2="950" y2="170" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="950,170 960,165 960,175" fill="#666666"/>
+  <text x="975" y="190" font-family="Arial" font-size="12" text-anchor="middle">dependencies met</text>
+  
+  <!-- IN_PROGRESS to COMPLETED -->
+  <line x1="870" y1="185" x2="820" y2="290" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="820,290 823,280 830,287" fill="#009933"/>
+  <text x="820" y="230" font-family="Arial" font-size="12" fill="#009933" text-anchor="middle">completion criteria met</text>
+  
+  <!-- IN_PROGRESS to FAILED -->
+  <line x1="900" y1="200" x2="950" y2="290" stroke="#cc0000" stroke-width="1.5"/>
+  <polygon points="950,290 943,280 953,282" fill="#cc0000"/>
+  <text x="950" y="250" font-family="Arial" font-size="12" fill="#cc0000" text-anchor="middle">any task failed</text>
+  
+  <!-- IN_PROGRESS to SKIPPED -->
+  <line x1="940" y1="180" x2="1070" y2="290" stroke="#666666" stroke-width="1.5"/>
+  <polygon points="1070,290 1060,285 1065,275" fill="#666666"/>
+  <text x="1040" y="230" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">skipTaskGroup()</text>
+  
+  <!-- NOT_STARTED to SKIPPED -->
+  <line x1="790" y1="180" x2="1060" y2="300" stroke="#666666" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="1060,300 1050,295 1055,285" fill="#666666"/>
+  <text x="930" y="210" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">skip before execution</text>
+  
+  <!-- Task Group Execution Notes -->
+  <rect x="750" y="490" width="400" height="150" rx="10" fill="#fff8e1" stroke="#ffab40" stroke-width="1.5"/>
+  <text x="950" y="515" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Task Group Execution Logic</text>
+  <text x="950" y="540" font-family="Arial" font-size="14" text-anchor="middle">Horizontal Group (Parallel Execution)</text>
+  <text x="770" y="565" font-family="Arial" font-size="12">• All tasks started simultaneously</text>
+  <text x="770" y="585" font-family="Arial" font-size="12">• Completion criteria: ALL, ANY, or N_OF_M</text>
+  <text x="770" y="605" font-family="Arial" font-size="12">• Group completes when criteria is met</text>
+  <text x="950" y="630" font-family="Arial" font-size="14" text-anchor="middle">Vertical Group (Sequential Execution)</text>
+  <text x="770" y="650" font-family="Arial" font-size="12">• Tasks executed in order by taskOrder</text>
+  <text x="770" y="670" font-family="Arial" font-size="12">• Next task starts only when previous completes</text>
+  
+  <!-- Task Handler Execution Section -->
+  <text x="350" y="520" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Task Handler Execution Flow</text>
+  
+  <!-- Execution Flow -->
+  <rect x="50" y="550" width="600" height="320" rx="10" fill="#fff8e1" stroke="#ffab40" stroke-width="1.5"/>
+  
+  <!-- Step 1: Initialize -->
+  <rect x="80" y="570" width="540" height="50" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="350" y="600" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">1. TaskHandler.run(Connection, TaskInstance)</text>
+  
+  <!-- Step 2: Prepare -->
+  <rect x="120" y="630" width="460" height="40" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="350" y="655" font-family="Arial" font-size="14" text-anchor="middle">2. prepare(Connection) - Optional override</text>
+  
+  <!-- Step 3: Move to In Progress -->
+  <rect x="120" y="680" width="460" height="40" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="350" y="705" font-family="Arial" font-size="14" text-anchor="middle">3. moveToInProgress(Connection)</text>
+  
+  <!-- Step 4: Execute -->
+  <rect x="120" y="730" width="460" height="40" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="350" y="755" font-family="Arial" font-size="14" text-anchor="middle">4. execute(Connection) - Task type specific logic</text>
+  
+  <!-- Step 5: Complete -->
+  <rect x="80" y="800" width="540" height="50" rx="5" fill="#ffe6cc" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="350" y="830" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">5. completeAndClose(Connection, TaskInstance, output)</text>
+  
+  <!-- Flow arrows -->
+  <line x1="350" y1="620" x2="350" y2="630" stroke="#0066cc" stroke-width="1.5"/>
+  <polygon points="350,630 345,620 355,620" fill="#0066cc"/>
+  
+  <line x1="350" y1="670" x2="350" y2="680" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="350,680 345,670 355,670" fill="#009933"/>
+  
+  <line x1="350" y1="720" x2="350" y2="730" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="350,730 345,720 355,720" fill="#009933"/>
+  
+  <line x1="350" y1="770" x2="350" y2="800" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="350,800 345,790 355,790" fill="#009933"/>
+  
+  <!-- Legend -->
+  <rect x="770" y="770" width="380" height="100" rx="5" fill="#f9f9f9" stroke="#666666" stroke-width="1"/>
+  <text x="960" y="790" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Legend</text>
+  
+  <circle cx="790" y="815" r="8" fill="#e6f2ff" stroke="#0066cc" stroke-width="2"/>
+  <text x="810" y="820" font-family="Arial" font-size="12" text-anchor="start">Initial State</text>
+  
+  <circle cx="870" y="815" r="8" fill="#ffe6cc" stroke="#ff9933" stroke-width="2"/>
+  <text x="890" y="820" font-family="Arial" font-size="12" text-anchor="start">Active State</text>
+  
+  <circle cx="950" y="815" r="8" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="970" y="820" font-family="Arial" font-size="12" text-anchor="start">Success Terminal State</text>
+  
+  <circle cx="1050" y="815" r="8" fill="#ffe6e6" stroke="#cc0000" stroke-width="2"/>
+  <text x="1070" y="820" font-family="Arial" font-size="12" text-anchor="start">Error Terminal State</text>
+  
+  <circle cx="790" y="845" r="8" fill="#e6e6e6" stroke="#666666" stroke-width="2"/>
+  <text x="810" y="850" font-family="Arial" font-size="12" text-anchor="start">Neutral Terminal State</text>
+  
+  <rect x="870" y="837" width="16" height="16" rx="2" fill="#fff8e1" stroke="#ffab40" stroke-width="1.5"/>
+  <text x="900" y="850" font-family="Arial" font-size="12" text-anchor="start">Notes/Process Flow</text>
+</svg>

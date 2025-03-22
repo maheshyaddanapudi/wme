@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000">
+  <!-- Background -->
+  <rect width="1200" height="1000" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Workflow Management Engine - Detailed System Architecture</text>
+  
+  <!-- Host Application Container -->
+  <rect x="50" y="70" width="1100" height="120" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="2"/>
+  <text x="600" y="95" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Host Application (Existing Monolith)</text>
+  
+  <rect x="80" y="110" width="220" height="60" rx="3" fill="#d4e6ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="190" y="145" font-family="Arial" font-size="16" text-anchor="middle">Database Connection</text>
+  
+  <rect x="330" y="110" width="220" height="60" rx="3" fill="#d4e6ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="440" y="145" font-family="Arial" font-size="16" text-anchor="middle">User/Group Management</text>
+  
+  <rect x="580" y="110" width="220" height="60" rx="3" fill="#d4e6ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="690" y="145" font-family="Arial" font-size="16" text-anchor="middle">Transaction Management</text>
+  
+  <rect x="830" y="110" width="290" height="60" rx="3" fill="#d4e6ff" stroke="#0066cc" stroke-width="1"/>
+  <text x="975" y="145" font-family="Arial" font-size="16" text-anchor="middle">WME Integration Point</text>
+  
+  <!-- WME Library Container -->
+  <rect x="50" y="210" width="1100" height="770" rx="5" fill="#f9f9f9" stroke="#666666" stroke-width="2"/>
+  <text x="600" y="235" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">Workflow Management Engine (JAR)</text>
+  
+  <!-- API Layer -->
+  <rect x="70" y="260" width="1060" height="100" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="2"/>
+  <text x="600" y="285" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Java API Layer</text>
+  
+  <!-- API Components -->
+  <rect x="80" y="300" width="250" height="50" rx="3" fill="#d1ecff" stroke="#0099cc" stroke-width="1"/>
+  <text x="205" y="330" font-family="Arial" font-size="16" text-anchor="middle">WorkflowDefinitionAPI</text>
+  
+  <rect x="340" y="300" width="250" height="50" rx="3" fill="#d1ecff" stroke="#0099cc" stroke-width="1"/>
+  <text x="465" y="330" font-family="Arial" font-size="16" text-anchor="middle">WorkflowExecutionAPI</text>
+  
+  <rect x="600" y="300" width="250" height="50" rx="3" fill="#d1ecff" stroke="#0099cc" stroke-width="1"/>
+  <text x="725" y="330" font-family="Arial" font-size="16" text-anchor="middle">TaskManagementAPI</text>
+  
+  <rect x="860" y="300" width="250" height="50" rx="3" fill="#d1ecff" stroke="#0099cc" stroke-width="1"/>
+  <text x="985" y="330" font-family="Arial" font-size="16" text-anchor="middle">QueryAndReportAPI</text>
+  
+  <!-- Service Layer -->
+  <rect x="70" y="380" width="1060" height="180" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="600" y="405" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Service Layer</text>
+  
+  <!-- Service Components -->
+  <rect x="80" y="425" width="340" height="125" rx="3" fill="#d1ffd1" stroke="#009933" stroke-width="1"/>
+  <text x="250" y="450" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Workflow Management Services</text>
+  <line x1="80" y1="460" x2="420" y2="460" stroke="#009933" stroke-width="1"/>
+  <text x="90" y="480" font-family="Arial" font-size="14">• WorkflowDefinitionService</text>
+  <text x="90" y="505" font-family="Arial" font-size="14">• WorkflowInstanceService</text>
+  <text x="90" y="530" font-family="Arial" font-size="14">• WorkflowVersionService</text>
+  
+  <rect x="430" y="425" width="340" height="125" rx="3" fill="#d1ffd1" stroke="#009933" stroke-width="1"/>
+  <text x="600" y="450" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Task Management Services</text>
+  <line x1="430" y1="460" x2="770" y2="460" stroke="#009933" stroke-width="1"/>
+  <text x="440" y="480" font-family="Arial" font-size="14">• TaskInstanceService</text>
+  <text x="440" y="505" font-family="Arial" font-size="14">• TaskCompletionService</text>
+  <text x="440" y="530" font-family="Arial" font-size="14">• TaskGroupCompletionService</text>
+  
+  <rect x="780" y="425" width="340" height="125" rx="3" fill="#d1ffd1" stroke="#009933" stroke-width="1"/>
+  <text x="950" y="450" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Workflow Control Services</text>
+  <line x1="780" y1="460" x2="1120" y2="460" stroke="#009933" stroke-width="1"/>
+  <text x="790" y="480" font-family="Arial" font-size="14">• WorkflowControlService</text>
+  <text x="790" y="505" font-family="Arial" font-size="14">• WorkflowStateManager</text>
+  <text x="790" y="530" font-family="Arial" font-size="14">• HistoryAndAuditService</text>
+  
+  <!-- Core Components Layer -->
+  <rect x="70" y="580" width="1060" height="220" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="2"/>
+  <text x="600" y="605" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Core Components</text>
+  
+  <!-- Core Component Boxes -->
+  <rect x="80" y="625" width="250" height="165" rx="3" fill="#ffedd1" stroke="#ff9933" stroke-width="1"/>
+  <text x="205" y="650" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Task Handlers</text>
+  <line x1="80" y1="660" x2="330" y2="660" stroke="#ff9933" stroke-width="1"/>
+  <text x="90" y="680" font-family="Arial" font-size="14">• TaskHandler (Abstract)</text>
+  <text x="90" y="705" font-family="Arial" font-size="14">• HttpTaskHandler</text>
+  <text x="90" y="730" font-family="Arial" font-size="14">• ToDoTaskHandler</text>
+  <text x="90" y="755" font-family="Arial" font-size="14">• SubmitTaskHandler</text>
+  <text x="90" y="780" font-family="Arial" font-size="14">• ApproveTaskHandler</text>
+  
+  <rect x="340" y="625" width="250" height="165" rx="3" fill="#ffedd1" stroke="#ff9933" stroke-width="1"/>
+  <text x="465" y="650" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Task Group Handlers</text>
+  <line x1="340" y1="660" x2="590" y2="660" stroke="#ff9933" stroke-width="1"/>
+  <text x="350" y="680" font-family="Arial" font-size="14">• TaskGroupHandler (Abstract)</text>
+  <text x="350" y="705" font-family="Arial" font-size="14">• HorizontalGroupHandler</text>
+  <text x="350" y="730" font-family="Arial" font-size="14">• VerticalGroupHandler</text>
+  <text x="350" y="755" font-family="Arial" font-size="14">• GroupCompletionEvaluator</text>
+  
+  <rect x="600" y="625" width="250" height="165" rx="3" fill="#ffedd1" stroke="#ff9933" stroke-width="1"/>
+  <text x="725" y="650" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Execution Components</text>
+  <line x1="600" y1="660" x2="850" y2="660" stroke="#ff9933" stroke-width="1"/>
+  <text x="610" y="680" font-family="Arial" font-size="14">• ExecutionQueuingInterceptor</text>
+  <text x="610" y="705" font-family="Arial" font-size="14">• WorkflowExecutionSweeper</text>
+  <text x="610" y="730" font-family="Arial" font-size="14">• QueueProcessor</text>
+  <text x="610" y="755" font-family="Arial" font-size="14">• TaskHandlerRegistry</text>
+  <text x="610" y="780" font-family="Arial" font-size="14">• WorkflowJsonParser</text>
+  
+  <rect x="860" y="625" width="250" height="165" rx="3" fill="#ffedd1" stroke="#ff9933" stroke-width="1"/>
+  <text x="985" y="650" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Data Models</text>
+  <line x1="860" y1="660" x2="1110" y2="660" stroke="#ff9933" stroke-width="1"/>
+  <text x="870" y="680" font-family="Arial" font-size="14">• WorkflowDefinition</text>
+  <text x="870" y="705" font-family="Arial" font-size="14">• WorkflowInstance</text>
+  <text x="870" y="730" font-family="Arial" font-size="14">• TaskGroupDefinition</text>
+  <text x="870" y="755" font-family="Arial" font-size="14">• TaskDefinition</text>
+  <text x="870" y="780" font-family="Arial" font-size="14">• TaskInstance</text>
+  
+  <!-- Data Access Layer -->
+  <rect x="70" y="820" width="1060" height="140" rx="5" fill="#ffe6e6" stroke="#cc0066" stroke-width="2"/>
+  <text x="600" y="845" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Data Access Layer</text>
+  
+  <!-- DAO Components -->
+  <rect x="80" y="865" width="340" height="85" rx="3" fill="#ffd1e6" stroke="#cc0066" stroke-width="1"/>
+  <text x="250" y="890" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Workflow DAOs</text>
+  <text x="90" y="915" font-family="Arial" font-size="14">• WorkflowDefinitionDAO</text>
+  <text x="250" y="915" font-family="Arial" font-size="14">• WorkflowInstanceDAO</text>
+  
+  <rect x="430" y="865" width="340" height="85" rx="3" fill="#ffd1e6" stroke="#cc0066" stroke-width="1"/>
+  <text x="600" y="890" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Task DAOs</text>
+  <text x="440" y="915" font-family="Arial" font-size="14">• TaskGroupDefinitionDAO</text>
+  <text x="650" y="915" font-family="Arial" font-size="14">• TaskDefinitionDAO</text>
+  <text x="440" y="940" font-family="Arial" font-size="14">• TaskGroupInstanceDAO</text>
+  <text x="650" y="940" font-family="Arial" font-size="14">• TaskInstanceDAO</text>
+  
+  <rect x="780" y="865" width="340" height="85" rx="3" fill="#ffd1e6" stroke="#cc0066" stroke-width="1"/>
+  <text x="950" y="890" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Control DAOs</text>
+  <text x="790" y="915" font-family="Arial" font-size="14">• WorkflowExecutionQueueDAO</text>
+  <text x="790" y="940" font-family="Arial" font-size="14">• WorkflowHistoryDAO</text>
+  
+  <!-- Database -->
+  <rect x="300" y="980" width="600" height="35" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="2"/>
+  <text x="600" y="1005" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">PostgreSQL Database</text>
+  
+  <!-- Connection Arrows -->
+  <!-- Host App to WME -->
+  <line x1="600" y1="190" x2="600" y2="210" stroke="#666666" stroke-width="3" stroke-dasharray="5,5"/>
+  <polygon points="600,210 595,200 605,200" fill="#666666"/>
+  
+  <!-- Layer connections -->
+  <line x1="600" y1="360" x2="600" y2="380" stroke="#666666" stroke-width="2"/>
+  <polygon points="600,380 595,370 605,370" fill="#666666"/>
+  
+  <line x1="600" y1="560" x2="600" y2="580" stroke="#666666" stroke-width="2"/>
+  <polygon points="600,580 595,570 605,570" fill="#666666"/>
+  
+  <line x1="600" y1="800" x2="600" y2="820" stroke="#666666" stroke-width="2"/>
+  <polygon points="600,820 595,810 605,810" fill="#666666"/>
+  
+  <line x1="600" y1="960" x2="600" y2="980" stroke="#666666" stroke-width="2"/>
+  <polygon points="600,980 595,970 605,970" fill="#666666"/>
+  
+  <!-- Task Handler to Queuing -->
+  <path d="M 205,790 C 205,805 400,805 610,780" stroke="#ff9933" stroke-width="1.5" fill="none"/>
+  <polygon points="610,780 600,785 605,775" fill="#ff9933"/>
+  
+  <!-- Sweeper to State Manager -->
+  <path d="M 725,705 C 800,705 800,650 950,505" stroke="#ff9933" stroke-width="1.5" fill="none"/>
+  <polygon points="950,505 940,510 945,500" fill="#ff9933"/>
+  
+  <!-- API to Service flows -->
+  <line x1="205" y1="350" x2="250" y2="425" stroke="#0099cc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <polygon points="250,425 242,417 252,415" fill="#0099cc"/>
+  
+  <line x1="465" y1="350" x2="600" y2="425" stroke="#0099cc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <polygon points="600,425 592,417 602,415" fill="#0099cc"/>
+  
+  <line x1="725" y1="350" x2="600" y2="425" stroke="#0099cc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <polygon points="600,425 608,417 598,415" fill="#0099cc"/>
+  
+  <line x1="985" y1="350" x2="950" y2="425" stroke="#0099cc" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <polygon points="950,425 958,417 948,415" fill="#0099cc"/>
+</svg>

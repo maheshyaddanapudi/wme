@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+    <!-- Background -->
+    <rect width="1000" height="600" fill="white"/>
+    
+    <!-- Title -->
+    <text x="500" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Task Group Types: Vertical vs Horizontal</text>
+    
+    <!-- Divider -->
+    <line x1="500" y1="60" x2="500" y2="550" stroke="#cccccc" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Section Labels -->
+    <text x="250" y="90" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#3366cc">Vertical Task Group</text>
+    <text x="250" y="120" font-family="Arial" font-size="16" text-anchor="middle" fill="#3366cc">(Sequential Execution)</text>
+    
+    <text x="750" y="90" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#339933">Horizontal Task Group</text>
+    <text x="750" y="120" font-family="Arial" font-size="16" text-anchor="middle" fill="#339933">(Parallel Execution)</text>
+    
+    <!-- Vertical Group Visualization -->
+    <rect x="150" y="150" width="200" height="300" rx="10" fill="#e6f0ff" stroke="#3366cc" stroke-width="2"/>
+    
+    <!-- Tasks in Vertical Group -->
+    <rect x="175" y="180" width="150" height="50" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="250" y="210" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Task 1</text>
+    
+    <rect x="175" y="270" width="150" height="50" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="250" y="300" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Task 2</text>
+    
+    <rect x="175" y="360" width="150" height="50" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="250" y="390" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Task 3</text>
+    
+    <!-- Arrows for Vertical Flow -->
+    <line x1="250" y1="230" x2="250" y2="270" stroke="#3366cc" stroke-width="2"/>
+    <polygon points="250,270 245,260 255,260" fill="#3366cc"/>
+    
+    <line x1="250" y1="320" x2="250" y2="360" stroke="#3366cc" stroke-width="2"/>
+    <polygon points="250,360 245,350 255,350" fill="#3366cc"/>
+    
+    <!-- Horizontal Group Visualization -->
+    <rect x="650" y="150" width="200" height="300" rx="10" fill="#e6ffe6" stroke="#339933" stroke-width="2"/>
+    
+    <!-- Tasks in Horizontal Group -->
+    <rect x="675" y="180" width="150" height="50" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="750" y="210" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Task A</text>
+    
+    <rect x="675" y="250" width="150" height="50" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="750" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Task B</text>
+    
+    <rect x="675" y="320" width="150" height="50" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="750" y="350" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Task C</text>
+    
+    <rect x="675" y="390" width="150" height="50" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="750" y="420" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Task D</text>
+    
+    <!-- Key Characteristics -->
+    <text x="250" y="480" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#3366cc">Key Characteristics:</text>
+    <text x="250" y="510" font-family="Arial" font-size="14" text-anchor="middle">• Tasks execute in strict sequence</text>
+    <text x="250" y="535" font-family="Arial" font-size="14" text-anchor="middle">• Next task depends on previous completion</text>
+    <text x="250" y="560" font-family="Arial" font-size="14" text-anchor="middle">• All tasks must complete for group to complete</text>
+    <text x="250" y="585" font-family="Arial" font-size="14" text-anchor="middle">• Failure of one task halts entire group</text>
+    
+    <text x="750" y="480" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#339933">Key Characteristics:</text>
+    <text x="750" y="510" font-family="Arial" font-size="14" text-anchor="middle">• All tasks execute simultaneously</text>
+    <text x="750" y="535" font-family="Arial" font-size="14" text-anchor="middle">• Tasks are independent of each other</text>
+    <text x="750" y="560" font-family="Arial" font-size="14" text-anchor="middle">• Configurable completion criteria (any, all, n)</text>
+    <text x="750" y="585" font-family="Arial" font-size="14" text-anchor="middle">• Partial completion possible</text>
+</svg>

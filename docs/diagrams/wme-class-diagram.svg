@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000">
+  <!-- Background -->
+  <rect width="1200" height="1000" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle">Workflow Management Engine - Class Diagram</text>
+
+  <!-- API Layer Classes -->
+  <!-- WorkflowDefinitionAPI -->
+  <rect x="60" y="70" width="220" height="100" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="1.5"/>
+  <text x="170" y="90" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">WorkflowDefinitionAPI</text>
+  <line x1="60" y1="100" x2="280" y2="100" stroke="#0099cc" stroke-width="1"/>
+  <text x="70" y="120" font-family="Arial" font-size="12">+ createDefinition()</text>
+  <text x="70" y="140" font-family="Arial" font-size="12">+ getDefinition()</text>
+  <text x="70" y="160" font-family="Arial" font-size="12">+ updateDefinition()</text>
+  
+  <!-- WorkflowExecutionAPI -->
+  <rect x="320" y="70" width="220" height="100" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="1.5"/>
+  <text x="430" y="90" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">WorkflowExecutionAPI</text>
+  <line x1="320" y1="100" x2="540" y2="100" stroke="#0099cc" stroke-width="1"/>
+  <text x="330" y="120" font-family="Arial" font-size="12">+ startWorkflow()</text>
+  <text x="330" y="140" font-family="Arial" font-size="12">+ pauseWorkflow()</text>
+  <text x="330" y="160" font-family="Arial" font-size="12">+ terminateWorkflow()</text>
+  
+  <!-- TaskManagementAPI -->
+  <rect x="580" y="70" width="220" height="100" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="1.5"/>
+  <text x="690" y="90" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">TaskManagementAPI</text>
+  <line x1="580" y1="100" x2="800" y2="100" stroke="#0099cc" stroke-width="1"/>
+  <text x="590" y="120" font-family="Arial" font-size="12">+ completeTask()</text>
+  <text x="590" y="140" font-family="Arial" font-size="12">+ getTaskDetails()</text>
+  <text x="590" y="160" font-family="Arial" font-size="12">+ resubmitTask()</text>
+  
+  <!-- QueryAndReportAPI -->
+  <rect x="840" y="70" width="220" height="100" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="1.5"/>
+  <text x="950" y="90" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">QueryAndReportAPI</text>
+  <line x1="840" y1="100" x2="1060" y2="100" stroke="#0099cc" stroke-width="1"/>
+  <text x="850" y="120" font-family="Arial" font-size="12">+ queryWorkflows()</text>
+  <text x="850" y="140" font-family="Arial" font-size="12">+ queryTasks()</text>
+  <text x="850" y="160" font-family="Arial" font-size="12">+ getAuditHistory()</text>
+  
+  <!-- Service Layer Classes -->
+  <!-- WorkflowDefinitionService -->
+  <rect x="60" y="220" width="220" height="120" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="170" y="240" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">WorkflowDefinitionService</text>
+  <line x1="60" y1="250" x2="280" y2="250" stroke="#009933" stroke-width="1"/>
+  <text x="70" y="270" font-family="Arial" font-size="12">- workflowDefDAO</text>
+  <text x="70" y="290" font-family="Arial" font-size="12">- taskGroupDefDAO</text>
+  <line x1="60" y1="300" x2="280" y2="300" stroke="#009933" stroke-width="1"/>
+  <text x="70" y="320" font-family="Arial" font-size="12">+ createDefinition()</text>
+  <text x="70" y="340" font-family="Arial" font-size="12">+ validateDefinition()</text>
+  
+  <!-- WorkflowInstanceService -->
+  <rect x="320" y="220" width="220" height="120" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="430" y="240" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">WorkflowInstanceService</text>
+  <line x1="320" y1="250" x2="540" y2="250" stroke="#009933" stroke-width="1"/>
+  <text x="330" y="270" font-family="Arial" font-size="12">- workflowInstDAO</text>
+  <text x="330" y="290" font-family="Arial" font-size="12">- executionQueueingInterceptor</text>
+  <line x1="320" y1="300" x2="540" y2="300" stroke="#009933" stroke-width="1"/>
+  <text x="330" y="320" font-family="Arial" font-size="12">+ startWorkflow()</text>
+  <text x="330" y="340" font-family="Arial" font-size="12">+ createTaskGroup()</text>
+  
+  <!-- TaskCompletionService -->
+  <rect x="580" y="220" width="220" height="120" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="690" y="240" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">TaskCompletionService</text>
+  <line x1="580" y1="250" x2="800" y2="250" stroke="#009933" stroke-width="1"/>
+  <text x="590" y="270" font-family="Arial" font-size="12">- taskInstanceDAO</text>
+  <text x="590" y="290" font-family="Arial" font-size="12">- taskHandlerRegistry</text>
+  <line x1="580" y1="300" x2="800" y2="300" stroke="#009933" stroke-width="1"/>
+  <text x="590" y="320" font-family="Arial" font-size="12">+ completeTask()</text>
+  <text x="590" y="340" font-family="Arial" font-size="12">+ handleTaskTransition()</text>
+  
+  <!-- WorkflowStateManager -->
+  <rect x="840" y="220" width="220" height="120" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="950" y="240" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">WorkflowStateManager</text>
+  <line x1="840" y1="250" x2="1060" y2="250" stroke="#009933" stroke-width="1"/>
+  <text x="850" y="270" font-family="Arial" font-size="12">- workflowinstanceDAO</text>
+  <text x="850" y="290" font-family="Arial" font-size="12">- taskGroupHandlerRegistry</text>
+  <line x1="840" y1="300" x2="1060" y2="300" stroke="#009933" stroke-width="1"/>
+  <text x="850" y="320" font-family="Arial" font-size="12">+ decide()</text>
+  <text x="850" y="340" font-family="Arial" font-size="12">+ handleWorkflowTransition()</text>
+  
+  <!-- Core Components -->
+  <!-- TaskHandler -->
+  <rect x="60" y="390" width="220" height="160" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="170" y="410" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">TaskHandler</text>
+  <text x="170" y="430" font-family="Arial" font-size="12" font-style="italic" text-anchor="middle">&lt;&lt;abstract&gt;&gt;</text>
+  <line x1="60" y1="440" x2="280" y2="440" stroke="#ff9933" stroke-width="1"/>
+  <text x="70" y="460" font-family="Arial" font-size="12"># taskInstance: TaskInstance</text>
+  <text x="70" y="480" font-family="Arial" font-size="12"># connection: Connection</text>
+  <line x1="60" y1="490" x2="280" y2="490" stroke="#ff9933" stroke-width="1"/>
+  <text x="70" y="510" font-family="Arial" font-size="12">+ run()</text>
+  <text x="70" y="530" font-family="Arial" font-size="12"># prepare()</text>
+  <text x="70" y="550" font-family="Arial" font-size="12"># execute()</text>
+  
+  <!-- TaskGroupHandler -->
+  <rect x="320" y="390" width="220" height="160" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="430" y="410" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">TaskGroupHandler</text>
+  <text x="430" y="430" font-family="Arial" font-size="12" font-style="italic" text-anchor="middle">&lt;&lt;abstract&gt;&gt;</text>
+  <line x1="320" y1="440" x2="540" y2="440" stroke="#ff9933" stroke-width="1"/>
+  <text x="330" y="460" font-family="Arial" font-size="12"># taskGroupInstance</text>
+  <text x="330" y="480" font-family="Arial" font-size="12"># completionEvaluator</text>
+  <line x1="320" y1="490" x2="540" y2="490" stroke="#ff9933" stroke-width="1"/>
+  <text x="330" y="510" font-family="Arial" font-size="12">+ run()</text>
+  <text x="330" y="530" font-family="Arial" font-size="12"># evaluateCompletion()</text>
+  <text x="330" y="550" font-family="Arial" font-size="12"># getTasks()</text>
+  
+  <!-- ExecutionQueuingInterceptor -->
+  <rect x="580" y="390" width="220" height="160" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="690" y="410" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">ExecutionQueuingInterceptor</text>
+  <line x1="580" y1="440" x2="800" y2="440" stroke="#ff9933" stroke-width="1"/>
+  <text x="590" y="460" font-family="Arial" font-size="12">- queueDAO</text>
+  <line x1="580" y1="490" x2="800" y2="490" stroke="#ff9933" stroke-width="1"/>
+  <text x="590" y="510" font-family="Arial" font-size="12">+ queueForStateManagement()</text>
+  <text x="590" y="530" font-family="Arial" font-size="12">- addToQueue()</text>
+  <text x="590" y="550" font-family="Arial" font-size="12">- updateQueueStatus()</text>
+  
+  <!-- WorkflowExecutionSweeper -->
+  <rect x="840" y="390" width="220" height="160" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="950" y="410" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">WorkflowExecutionSweeper</text>
+  <line x1="840" y1="440" x2="1060" y2="440" stroke="#ff9933" stroke-width="1"/>
+  <text x="850" y="460" font-family="Arial" font-size="12">- queueDAO</text>
+  <text x="850" y="480" font-family="Arial" font-size="12">- stateManager</text>
+  <line x1="840" y1="490" x2="1060" y2="490" stroke="#ff9933" stroke-width="1"/>
+  <text x="850" y="510" font-family="Arial" font-size="12">+ init()</text>
+  <text x="850" y="530" font-family="Arial" font-size="12">- sweepWorkflows()</text>
+  <text x="850" y="550" font-family="Arial" font-size="12">- processTenantWorkflows()</text>
+  
+  <!-- Task Type Specific Handlers -->
+  <rect x="60" y="600" width="160" height="60" rx="5" fill="#ffedd1" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="140" y="635" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">HttpTaskHandler</text>
+  
+  <rect x="230" y="600" width="160" height="60" rx="5" fill="#ffedd1" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="310" y="635" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">ToDoTaskHandler</text>
+  
+  <rect x="400" y="600" width="160" height="60" rx="5" fill="#ffedd1" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="480" y="635" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">SubmitTaskHandler</text>
+  
+  <rect x="570" y="600" width="160" height="60" rx="5" fill="#ffedd1" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="650" y="635" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">ApproveTaskHandler</text>
+  
+  <rect x="740" y="600" width="160" height="60" rx="5" fill="#ffedd1" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="820" y="635" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">ReviewTaskHandler</text>
+  
+  <!-- Task Group Type Specific Handlers -->
+  <rect x="230" y="700" width="160" height="60" rx="5" fill="#ffedd1" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="310" y="735" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">HorizontalGroupHandler</text>
+  
+  <rect x="400" y="700" width="160" height="60" rx="5" fill="#ffedd1" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="480" y="735" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">VerticalGroupHandler</text>
+  
+  <!-- Model classes -->
+  <rect x="910" y="600" width="180" height="170" rx="5" fill="#e6e6ff" stroke="#6666cc" stroke-width="1.5"/>
+  <text x="1000" y="620" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Data Models</text>
+  <line x1="910" y1="630" x2="1090" y2="630" stroke="#6666cc" stroke-width="1"/>
+  <text x="920" y="650" font-family="Arial" font-size="12">- WorkflowDefinition</text>
+  <text x="920" y="670" font-family="Arial" font-size="12">- WorkflowInstance</text>
+  <text x="920" y="690" font-family="Arial" font-size="12">- TaskGroupDefinition</text>
+  <text x="920" y="710" font-family="Arial" font-size="12">- TaskGroupInstance</text>
+  <text x="920" y="730" font-family="Arial" font-size="12">- TaskDefinition</text>
+  <text x="920" y="750" font-family="Arial" font-size="12">- TaskInstance</text>
+  <text x="920" y="770" font-family="Arial" font-size="12">- WorkflowExecutionQueue</text>
+  
+  <!-- Data Access Objects -->
+  <rect x="570" y="700" width="320" height="170" rx="5" fill="#ffe6f2" stroke="#cc0066" stroke-width="1.5"/>
+  <text x="730" y="720" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Data Access Objects</text>
+  <line x1="570" y1="730" x2="890" y2="730" stroke="#cc0066" stroke-width="1"/>
+  <text x="580" y="750" font-family="Arial" font-size="12">- WorkflowDefinitionDAO</text>
+  <text x="580" y="770" font-family="Arial" font-size="12">- WorkflowInstanceDAO</text>
+  <text x="580" y="790" font-family="Arial" font-size="12">- TaskGroupDefinitionDAO</text>
+  <text x="580" y="810" font-family="Arial" font-size="12">- TaskGroupInstanceDAO</text>
+  <text x="580" y="830" font-family="Arial" font-size="12">- TaskDefinitionDAO</text>
+  <text x="580" y="850" font-family="Arial" font-size="12">- TaskInstanceDAO</text>
+  <text x="580" y="870" font-family="Arial" font-size="12">- WorkflowExecutionQueueDAO</text>
+  
+  <!-- Handler Registry -->
+  <rect x="60" y="800" width="220" height="120" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="170" y="820" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">TaskHandlerRegistry</text>
+  <line x1="60" y1="830" x2="280" y2="830" stroke="#ff9933" stroke-width="1"/>
+  <text x="70" y="850" font-family="Arial" font-size="12">- handlerMap: Map</text>
+  <line x1="60" y1="860" x2="280" y2="860" stroke="#ff9933" stroke-width="1"/>
+  <text x="70" y="880" font-family="Arial" font-size="12">+ registerHandler()</text>
+  <text x="70" y="900" font-family="Arial" font-size="12">+ getHandler()</text>
+  <text x="70" y="920" font-family="Arial" font-size="12">+ init()</text>
+  
+  <!-- Relationship Lines -->
+  
+  <!-- API to Service -->
+  <line x1="170" y1="170" x2="170" y2="220" stroke="#0099cc" stroke-width="1.5"/>
+  <polygon points="170,220 165,210 175,210" fill="#0099cc"/>
+  
+  <line x1="430" y1="170" x2="430" y2="220" stroke="#0099cc" stroke-width="1.5"/>
+  <polygon points="430,220 425,210 435,210" fill="#0099cc"/>
+  
+  <line x1="690" y1="170" x2="690" y2="220" stroke="#0099cc" stroke-width="1.5"/>
+  <polygon points="690,220 685,210 695,210" fill="#0099cc"/>
+  
+  <line x1="950" y1="170" x2="950" y2="220" stroke="#0099cc" stroke-width="1.5"/>
+  <polygon points="950,220 945,210 955,210" fill="#0099cc"/>
+  
+  <!-- Service to Core -->
+  <line x1="690" y1="340" x2="690" y2="390" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="690,390 685,380 695,380" fill="#009933"/>
+  
+  <line x1="170" y1="340" x2="170" y2="390" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="170,390 165,380 175,380" fill="#009933"/>
+  
+  <line x1="430" y1="340" x2="430" y2="390" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="430,390 425,380 435,380" fill="#009933"/>
+  
+  <line x1="950" y1="340" x2="950" y2="390" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="950,390 945,380 955,380" fill="#009933"/>
+  
+  <!-- TaskHandler to specialized handlers -->
+  <line x1="140" y1="550" x2="140" y2="600" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="140,600 135,590 145,590" fill="#ff9933"/>
+  
+  <line x1="170" y1="550" x2="310" y2="600" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="310,600 298,595 302,585" fill="#ff9933"/>
+  
+  <line x1="170" y1="550" x2="480" y2="600" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="480,600 468,595 472,585" fill="#ff9933"/>
+  
+  <line x1="170" y1="550" x2="650" y2="600" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="650,600 638,595 642,585" fill="#ff9933"/>
+  
+  <line x1="170" y1="550" x2="820" y2="600" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="820,600 808,595 812,585" fill="#ff9933"/>
+  
+  <!-- TaskGroupHandler to specialized handlers -->
+  <line x1="430" y1="550" x2="310" y2="700" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="310,700 315,688 321,696" fill="#ff9933"/>
+  
+  <line x1="430" y1="550" x2="480" y2="700" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="480,700 472,688 485,689" fill="#ff9933"/>
+  
+  <!-- TaskHandlerRegistry connections -->
+  <line x1="170" y1="550" x2="170" y2="800" stroke="#ff9933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="170,800 165,790 175,790" fill="#ff9933"/>
+  
+  <!-- CoreComponents to DAOs -->
+  <line x1="690" y1="550" x2="730" y2="700" stroke="#ff9933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="730,700 720,690 735,685" fill="#ff9933"/>
+  
+  <line x1="950" y1="550" x2="730" y2="700" stroke="#ff9933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="730,700 740,690 735,685" fill="#ff9933"/>
+  
+  <!-- Services to DAOs -->
+  <line x1="170" y1="340" x2="635" y2="700" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="635,700 625,690 640,685" fill="#009933"/>
+  
+  <line x1="430" y1="340" x2="675" y2="700" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="675,700 665,690 680,685" fill="#009933"/>
+  
+  <line x1="690" y1="340" x2="715" y2="700" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="715,700 705,690 720,685" fill="#009933"/>
+  
+  <line x1="950" y1="340" x2="755" y2="700" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="755,700 745,690 760,685" fill="#009933"/>
+  
+  <!-- Services to Models -->
+  <line x1="280" y1="280" x2="910" y2="650" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="910,650 900,645 905,655" fill="#009933"/>
+  
+  <line x1="540" y1="280" x2="910" y2="670" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="910,670 900,665 905,675" fill="#009933"/>
+  
+  <line x1="800" y1="280" x2="910" y2="730" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="910,730 900,725 905,735" fill="#009933"/>
+  
+  <line x1="1060" y1="280" x2="1000" y2="600" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="1000,600 995,590 1005,590" fill="#009933"/>
+</svg>

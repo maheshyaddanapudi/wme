@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Workflow Execution Management Logic</text>
+  
+  <!-- Main Container -->
+  <rect x="50" y="70" width="1100" height="810" rx="10" fill="#f9f9f9" stroke="#666666" stroke-width="1"/>
+  
+  <!-- Section Titles -->
+  <text x="600" y="100" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Task Completion to Workflow State Management Flow</text>
+  
+  <!-- Host Application -->
+  <rect x="70" y="130" width="200" height="60" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="2"/>
+  <text x="170" y="165" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Host Application</text>
+  
+  <!-- API Layer -->
+  <rect x="70" y="220" width="200" height="160" rx="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="2"/>
+  <text x="170" y="245" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">API Layer</text>
+  <line x1="70" y1="255" x2="270" y2="255" stroke="#0099cc" stroke-width="1"/>
+  <text x="170" y="280" font-family="Arial" font-size="14" text-anchor="middle">WorkflowDefinitionAPI</text>
+  <text x="170" y="310" font-family="Arial" font-size="14" text-anchor="middle">WorkflowExecutionAPI</text>
+  <text x="170" y="340" font-family="Arial" font-size="14" text-anchor="middle">TaskManagementAPI</text>
+  <text x="170" y="370" font-family="Arial" font-size="14" text-anchor="middle">QueryAndReportAPI</text>
+  
+  <!-- Service Layer - Task Completion -->
+  <rect x="300" y="130" width="200" height="250" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="400" y="155" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Task Completion</text>
+  <line x1="300" y1="165" x2="500" y2="165" stroke="#009933" stroke-width="1"/>
+  <text x="400" y="190" font-family="Arial" font-size="14" text-anchor="middle">TaskCompletionService</text>
+  <text x="400" y="220" font-family="Arial" font-size="14" text-anchor="middle">completeTask()</text>
+  
+  <!-- Task Handler -->
+  <rect x="320" y="240" width="160" height="120" rx="5" fill="#d1ffd1" stroke="#009933" stroke-width="1.5"/>
+  <text x="400" y="265" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">TaskHandler</text>
+  <line x1="320" y1="275" x2="480" y2="275" stroke="#009933" stroke-width="1"/>
+  <text x="400" y="300" font-family="Arial" font-size="12" text-anchor="middle">completeAndClose()</text>
+  <text x="400" y="325" font-family="Arial" font-size="12" text-anchor="middle">moveToComplete()</text>
+  <text x="400" y="350" font-family="Arial" font-size="12" text-anchor="middle">close()</text>
+  
+  <!-- Execution Queuing Interceptor -->
+  <rect x="530" y="130" width="240" height="140" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="2"/>
+  <text x="650" y="155" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Execution Queuing</text>
+  <line x1="530" y1="165" x2="770" y2="165" stroke="#ff9933" stroke-width="1"/>
+  <text x="650" y="190" font-family="Arial" font-size="14" text-anchor="middle">ExecutionQueuingInterceptor</text>
+  <text x="650" y="220" font-family="Arial" font-size="14" text-anchor="middle">queueForStateManagement()</text>
+  <text x="650" y="250" font-family="Arial" font-size="12" text-anchor="middle">Adds entry to queue table</text>
+  
+  <!-- Workflow Execution Queue -->
+  <rect x="530" y="300" width="240" height="80" rx="5" fill="#ffe6e6" stroke="#cc0066" stroke-width="2"/>
+  <text x="650" y="325" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Database</text>
+  <text x="650" y="355" font-family="Arial" font-size="14" text-anchor="middle">workflow_execution_queue</text>
+  
+  <!-- Workflow Execution Sweeper -->
+  <rect x="800" y="130" width="320" height="250" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="2"/>
+  <text x="960" y="155" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Execution Processing</text>
+  <line x1="800" y1="165" x2="1120" y2="165" stroke="#ff9933" stroke-width="1"/>
+  <text x="960" y="190" font-family="Arial" font-size="14" text-anchor="middle">WorkflowExecutionSweeper</text>
+  <rect x="820" y="205" width="280" height="155" rx="5" fill="#ffedd1" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="835" y="225" font-family="Arial" font-size="12">1. Periodically polls queue table</text>
+  <text x="835" y="250" font-family="Arial" font-size="12">2. Extracts pending workflows</text>
+  <text x="835" y="275" font-family="Arial" font-size="12">3. Uses thread pool for concurrency</text>
+  <text x="835" y="300" font-family="Arial" font-size="12">4. For each workflow:</text>
+  <text x="850" y="325" font-family="Arial" font-size="12">   a. Updates queue status to PROCESSING</text>
+  <text x="850" y="350" font-family="Arial" font-size="12">   b. Delegates to WorkflowStateManager</text>
+  
+  <!-- State Manager Section -->
+  <text x="600" y="420" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Workflow State Management</text>
+  
+  <!-- Workflow State Manager -->
+  <rect x="300" y="450" width="600" height="210" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="600" y="475" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">WorkflowStateManager</text>
+  <line x1="300" y1="485" x2="900" y2="485" stroke="#009933" stroke-width="1"/>
+  <text x="600" y="510" font-family="Arial" font-size="14" text-anchor="middle">decide(workflowId, connection, lastPollTime)</text>
+  
+  <rect x="320" y="525" width="560" height="120" rx="5" fill="#d1ffd1" stroke="#009933" stroke-width="1.5"/>
+  <text x="335" y="545" font-family="Arial" font-size="12">1. Check if workflow is still in progress</text>
+  <text x="335" y="570" font-family="Arial" font-size="12">2. Get completed tasks/groups since last poll</text>
+  <text x="335" y="595" font-family="Arial" font-size="12">3. Determine next eligible tasks/groups</text>
+  <text x="335" y="620" font-family="Arial" font-size="12">4. Start eligible tasks using appropriate handlers</text>
+  <text x="335" y="645" font-family="Arial" font-size="12">5. Update workflow status if all complete or if errors occurred</text>
+  
+  <!-- Database DAOs -->
+  <rect x="70" y="450" width="200" height="160" rx="5" fill="#ffe6e6" stroke="#cc0066" stroke-width="2"/>
+  <text x="170" y="475" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Database DAOs</text>
+  <line x1="70" y1="485" x2="270" y2="485" stroke="#cc0066" stroke-width="1"/>
+  <text x="170" y="510" font-family="Arial" font-size="14" text-anchor="middle">WorkflowInstanceDAO</text>
+  <text x="170" y="540" font-family="Arial" font-size="14" text-anchor="middle">TaskGroupInstanceDAO</text>
+  <text x="170" y="570" font-family="Arial" font-size="14" text-anchor="middle">TaskInstanceDAO</text>
+  <text x="170" y="600" font-family="Arial" font-size="14" text-anchor="middle">WorkflowExecutionQueueDAO</text>
+  
+  <!-- Handler Registry -->
+  <rect x="930" y="450" width="200" height="120" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="2"/>
+  <text x="1030" y="475" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Handler Registry</text>
+  <line x1="930" y1="485" x2="1130" y2="485" stroke="#ff9933" stroke-width="1"/>
+  <text x="1030" y="510" font-family="Arial" font-size="14" text-anchor="middle">TaskHandlerRegistry</text>
+  <text x="1030" y="540" font-family="Arial" font-size="14" text-anchor="middle">getHandler()</text>
+  <text x="1030" y="570" font-family="Arial" font-size="12" text-anchor="middle">Maps task types to handlers</text>
+  
+  <!-- Task Execution Loop Section -->
+  <text x="600" y="700" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Task and Task Group Execution</text>
+  
+  <!-- Task Handler Flow -->
+  <rect x="100" y="730" width="300" height="130" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="2"/>
+  <text x="250" y="755" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Task Handler</text>
+  <line x1="100" y1="765" x2="400" y2="765" stroke="#ff9933" stroke-width="1"/>
+  <text x="120" y="790" font-family="Arial" font-size="12">1. run(Connection, TaskInstance)</text>
+  <text x="120" y="815" font-family="Arial" font-size="12">2. moveToInProgress(Connection)</text>
+  <text x="120" y="840" font-family="Arial" font-size="12">3. execute() - Task type specific logic</text>
+  
+  <!-- Task Group Handler Flow -->
+  <rect x="450" y="730" width="300" height="130" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="2"/>
+  <text x="600" y="755" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Task Group Handler</text>
+  <line x1="450" y1="765" x2="750" y2="765" stroke="#ff9933" stroke-width="1"/>
+  <text x="470" y="790" font-family="Arial" font-size="12">1. run(Connection, TaskGroupInstance)</text>
+  <text x="470" y="815" font-family="Arial" font-size="12">2. Based on group type (Vertical/Horizontal):</text>
+  <text x="470" y="840" font-family="Arial" font-size="12">3. Start eligible tasks within the group</text>
+  
+  <!-- Completion Evaluator -->
+  <rect x="800" y="730" width="300" height="130" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="2"/>
+  <text x="950" y="755" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Group Completion Evaluator</text>
+  <line x1="800" y1="765" x2="1100" y2="765" stroke="#ff9933" stroke-width="1"/>
+  <text x="820" y="790" font-family="Arial" font-size="12">1. evaluateCompletion(Connection, GroupInstance)</text>
+  <text x="820" y="815" font-family="Arial" font-size="12">2. Checks based on criteria (ALL, ANY, N_OF_M)</text>
+  <text x="820" y="840" font-family="Arial" font-size="12">3. Updates group status when criteria met</text>
+  
+  <!-- Connection Arrows -->
+  <!-- Host to API -->
+  <line x1="170" y1="190" x2="170" y2="220" stroke="#0066cc" stroke-width="1.5"/>
+  <polygon points="170,220 165,210 175,210" fill="#0066cc"/>
+  
+  <!-- API to Service -->
+  <line x1="270" y1="250" x2="300" y2="250" stroke="#0099cc" stroke-width="1.5"/>
+  <polygon points="300,250 290,245 290,255" fill="#0099cc"/>
+  
+  <!-- Task Completion to Queuing -->
+  <line x1="480" y1="300" x2="530" y2="220" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="530,220 520,225 525,215" fill="#009933"/>
+  <text x="490" y="240" font-family="Arial" font-size="12" text-anchor="middle">calls</text>
+  
+  <!-- Queuing to Database -->
+  <line x1="650" y1="270" x2="650" y2="300" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="650,300 645,290 655,290" fill="#ff9933"/>
+  <text x="670" y="285" font-family="Arial" font-size="12" text-anchor="middle">writes</text>
+  
+  <!-- Database to Sweeper -->
+  <line x1="770" y1="340" x2="870" y2="340" stroke="#cc0066" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <polygon points="870,340 860,335 860,345" fill="#cc0066"/>
+  <text x="820" y="330" font-family="Arial" font-size="12" text-anchor="middle">polls</text>
+  
+  <!-- Sweeper to State Manager -->
+  <line x1="960" y1="380" x2="600" y2="450" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="600,450 605,440 610,448" fill="#ff9933"/>
+  <text x="750" y="410" font-family="Arial" font-size="12" text-anchor="middle">calls decide()</text>
+  
+  <!-- State Manager to DAOs -->
+  <line x1="300" y1="550" x2="270" y2="550" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="270,550 280,545 280,555" fill="#009933"/>
+  <text x="285" y="540" font-family="Arial" font-size="12" text-anchor="middle">uses</text>
+  
+  <!-- State Manager to Handler Registry -->
+  <line x1="900" y1="550" x2="930" y2="550" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="930,550 920,545 920,555" fill="#009933"/>
+  <text x="915" y="540" font-family="Arial" font-size="12" text-anchor="middle">uses</text>
+  
+  <!-- State Manager to Task Handler -->
+  <path d="M 600,660 C 600,680 250,680 250,730" stroke="#009933" stroke-width="1.5" fill="none"/>
+  <polygon points="250,730 245,720 255,720" fill="#009933"/>
+  <text x="350" y="700" font-family="Arial" font-size="12" text-anchor="middle">starts tasks</text>
+  
+  <!-- State Manager to Task Group Handler -->
+  <line x1="600" y1="660" x2="600" y2="730" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="600,730 595,720 605,720" fill="#009933"/>
+  <text x="620" y="700" font-family="Arial" font-size="12" text-anchor="middle">starts groups</text>
+  
+  <!-- Task Group Handler to Completion Evaluator -->
+  <line x1="750" y1="790" x2="800" y2="790" stroke="#ff9933" stroke-width="1.5"/>
+  <polygon points="800,790 790,785 790,795" fill="#ff9933"/>
+  <text x="775" y="780" font-family="Arial" font-size="12" text-anchor="middle">uses</text>
+</svg>

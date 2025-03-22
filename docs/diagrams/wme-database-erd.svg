@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle">Workflow Management Engine - Database Schema ERD</text>
+  
+  <!-- workflow_definitions -->
+  <rect x="50" y="70" width="250" height="160" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="175" y="90" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">workflow_definitions</text>
+  <line x1="50" y1="100" x2="300" y2="100" stroke="#0066cc" stroke-width="1"/>
+  <text x="60" y="120" font-family="Arial" font-size="12" font-weight="bold">id</text>
+  <text x="270" y="120" font-family="Arial" font-size="12" text-anchor="end">uuid PK</text>
+  <text x="60" y="140" font-family="Arial" font-size="12">name</text>
+  <text x="270" y="140" font-family="Arial" font-size="12" text-anchor="end">varchar(255)</text>
+  <text x="60" y="160" font-family="Arial" font-size="12">version</text>
+  <text x="270" y="160" font-family="Arial" font-size="12" text-anchor="end">integer</text>
+  <text x="60" y="180" font-family="Arial" font-size="12">definition_json</text>
+  <text x="270" y="180" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  <text x="60" y="200" font-family="Arial" font-size="12">description</text>
+  <text x="270" y="200" font-family="Arial" font-size="12" text-anchor="end">text</text>
+  <text x="60" y="220" font-family="Arial" font-size="12">created_at/updated_at</text>
+  <text x="270" y="220" font-family="Arial" font-size="12" text-anchor="end">timestamp</text>
+  
+  <!-- workflow_instances -->
+  <rect x="50" y="350" width="250" height="200" rx="5" fill="#e6f2ff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="175" y="370" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">workflow_instances</text>
+  <line x1="50" y1="380" x2="300" y2="380" stroke="#0066cc" stroke-width="1"/>
+  <text x="60" y="400" font-family="Arial" font-size="12" font-weight="bold">id</text>
+  <text x="270" y="400" font-family="Arial" font-size="12" text-anchor="end">uuid PK</text>
+  <text x="60" y="420" font-family="Arial" font-size="12">workflow_def_id</text>
+  <text x="270" y="420" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="60" y="440" font-family="Arial" font-size="12">status</text>
+  <text x="270" y="440" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="60" y="460" font-family="Arial" font-size="12">input_json</text>
+  <text x="270" y="460" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  <text x="60" y="480" font-family="Arial" font-size="12">output_json</text>
+  <text x="270" y="480" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  <text x="60" y="500" font-family="Arial" font-size="12">start_time</text>
+  <text x="270" y="500" font-family="Arial" font-size="12" text-anchor="end">timestamp</text>
+  <text x="60" y="520" font-family="Arial" font-size="12">end_time</text>
+  <text x="270" y="520" font-family="Arial" font-size="12" text-anchor="end">timestamp</text>
+  <text x="60" y="540" font-family="Arial" font-size="12">created_at/updated_at</text>
+  <text x="270" y="540" font-family="Arial" font-size="12" text-anchor="end">timestamp</text>
+  
+  <!-- task_group_definitions -->
+  <rect x="350" y="70" width="250" height="200" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="475" y="90" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">task_group_definitions</text>
+  <line x1="350" y1="100" x2="600" y2="100" stroke="#009933" stroke-width="1"/>
+  <text x="360" y="120" font-family="Arial" font-size="12" font-weight="bold">id</text>
+  <text x="590" y="120" font-family="Arial" font-size="12" text-anchor="end">uuid PK</text>
+  <text x="360" y="140" font-family="Arial" font-size="12">workflow_def_id</text>
+  <text x="590" y="140" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="360" y="160" font-family="Arial" font-size="12">parent_group_def_id</text>
+  <text x="590" y="160" font-family="Arial" font-size="12" text-anchor="end">uuid FK NULL</text>
+  <text x="360" y="180" font-family="Arial" font-size="12">name</text>
+  <text x="590" y="180" font-family="Arial" font-size="12" text-anchor="end">varchar(255)</text>
+  <text x="360" y="200" font-family="Arial" font-size="12">group_type</text>
+  <text x="590" y="200" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="360" y="220" font-family="Arial" font-size="12">completion_criteria</text>
+  <text x="590" y="220" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="360" y="240" font-family="Arial" font-size="12">group_order</text>
+  <text x="590" y="240" font-family="Arial" font-size="12" text-anchor="end">integer</text>
+  <text x="360" y="260" font-family="Arial" font-size="12">parameters_json</text>
+  <text x="590" y="260" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  
+  <!-- task_group_instances -->
+  <rect x="350" y="350" width="250" height="200" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1.5"/>
+  <text x="475" y="370" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">task_group_instances</text>
+  <line x1="350" y1="380" x2="600" y2="380" stroke="#009933" stroke-width="1"/>
+  <text x="360" y="400" font-family="Arial" font-size="12" font-weight="bold">id</text>
+  <text x="590" y="400" font-family="Arial" font-size="12" text-anchor="end">uuid PK</text>
+  <text x="360" y="420" font-family="Arial" font-size="12">workflow_instance_id</text>
+  <text x="590" y="420" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="360" y="440" font-family="Arial" font-size="12">task_group_def_id</text>
+  <text x="590" y="440" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="360" y="460" font-family="Arial" font-size="12">parent_group_inst_id</text>
+  <text x="590" y="460" font-family="Arial" font-size="12" text-anchor="end">uuid FK NULL</text>
+  <text x="360" y="480" font-family="Arial" font-size="12">status</text>
+  <text x="590" y="480" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="360" y="500" font-family="Arial" font-size="12">min_completion</text>
+  <text x="590" y="500" font-family="Arial" font-size="12" text-anchor="end">integer</text>
+  <text x="360" y="520" font-family="Arial" font-size="12">parameters_json</text>
+  <text x="590" y="520" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  <text x="360" y="540" font-family="Arial" font-size="12">start_time/end_time</text>
+  <text x="590" y="540" font-family="Arial" font-size="12" text-anchor="end">timestamp</text>
+  
+  <!-- task_definitions -->
+  <rect x="650" y="70" width="250" height="180" rx="5" fill="#ffe6f2" stroke="#cc0066" stroke-width="1.5"/>
+  <text x="775" y="90" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">task_definitions</text>
+  <line x1="650" y1="100" x2="900" y2="100" stroke="#cc0066" stroke-width="1"/>
+  <text x="660" y="120" font-family="Arial" font-size="12" font-weight="bold">id</text>
+  <text x="890" y="120" font-family="Arial" font-size="12" text-anchor="end">uuid PK</text>
+  <text x="660" y="140" font-family="Arial" font-size="12">workflow_def_id</text>
+  <text x="890" y="140" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="660" y="160" font-family="Arial" font-size="12">task_group_def_id</text>
+  <text x="890" y="160" font-family="Arial" font-size="12" text-anchor="end">uuid FK NULL</text>
+  <text x="660" y="180" font-family="Arial" font-size="12">name</text>
+  <text x="890" y="180" font-family="Arial" font-size="12" text-anchor="end">varchar(255)</text>
+  <text x="660" y="200" font-family="Arial" font-size="12">task_type</text>
+  <text x="890" y="200" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="660" y="220" font-family="Arial" font-size="12">task_order</text>
+  <text x="890" y="220" font-family="Arial" font-size="12" text-anchor="end">integer</text>
+  <text x="660" y="240" font-family="Arial" font-size="12">parameters_json</text>
+  <text x="890" y="240" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  
+  <!-- task_instances -->
+  <rect x="650" y="350" width="250" height="200" rx="5" fill="#ffe6f2" stroke="#cc0066" stroke-width="1.5"/>
+  <text x="775" y="370" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">task_instances</text>
+  <line x1="650" y1="380" x2="900" y2="380" stroke="#cc0066" stroke-width="1"/>
+  <text x="660" y="400" font-family="Arial" font-size="12" font-weight="bold">id</text>
+  <text x="890" y="400" font-family="Arial" font-size="12" text-anchor="end">uuid PK</text>
+  <text x="660" y="420" font-family="Arial" font-size="12">workflow_instance_id</text>
+  <text x="890" y="420" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="660" y="440" font-family="Arial" font-size="12">task_def_id</text>
+  <text x="890" y="440" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="660" y="460" font-family="Arial" font-size="12">task_group_instance_id</text>
+  <text x="890" y="460" font-family="Arial" font-size="12" text-anchor="end">uuid FK NULL</text>
+  <text x="660" y="480" font-family="Arial" font-size="12">assignee</text>
+  <text x="890" y="480" font-family="Arial" font-size="12" text-anchor="end">varchar(255)</text>
+  <text x="660" y="500" font-family="Arial" font-size="12">status</text>
+  <text x="890" y="500" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="660" y="520" font-family="Arial" font-size="12">input_json</text>
+  <text x="890" y="520" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  <text x="660" y="540" font-family="Arial" font-size="12">output_json</text>
+  <text x="890" y="540" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  
+  <!-- workflow_execution_queue -->
+  <rect x="350" y="600" width="250" height="160" rx="5" fill="#fff2e6" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="475" y="620" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">workflow_execution_queue</text>
+  <line x1="350" y1="630" x2="600" y2="630" stroke="#ff9933" stroke-width="1"/>
+  <text x="360" y="650" font-family="Arial" font-size="12" font-weight="bold">id</text>
+  <text x="590" y="650" font-family="Arial" font-size="12" text-anchor="end">uuid PK</text>
+  <text x="360" y="670" font-family="Arial" font-size="12">workflow_instance_id</text>
+  <text x="590" y="670" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="360" y="690" font-family="Arial" font-size="12">status</text>
+  <text x="590" y="690" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="360" y="710" font-family="Arial" font-size="12">priority</text>
+  <text x="590" y="710" font-family="Arial" font-size="12" text-anchor="end">integer</text>
+  <text x="360" y="730" font-family="Arial" font-size="12">last_updated</text>
+  <text x="590" y="730" font-family="Arial" font-size="12" text-anchor="end">timestamp</text>
+  <text x="360" y="750" font-family="Arial" font-size="12">created_at</text>
+  <text x="590" y="750" font-family="Arial" font-size="12" text-anchor="end">timestamp</text>
+  
+  <!-- workflow_history -->
+  <rect x="650" y="600" width="250" height="160" rx="5" fill="#e6e6ff" stroke="#6666cc" stroke-width="1.5"/>
+  <text x="775" y="620" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">workflow_history</text>
+  <line x1="650" y1="630" x2="900" y2="630" stroke="#6666cc" stroke-width="1"/>
+  <text x="660" y="650" font-family="Arial" font-size="12" font-weight="bold">id</text>
+  <text x="890" y="650" font-family="Arial" font-size="12" text-anchor="end">uuid PK</text>
+  <text x="660" y="670" font-family="Arial" font-size="12">workflow_instance_id</text>
+  <text x="890" y="670" font-family="Arial" font-size="12" text-anchor="end">uuid FK</text>
+  <text x="660" y="690" font-family="Arial" font-size="12">entity_type</text>
+  <text x="890" y="690" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="660" y="710" font-family="Arial" font-size="12">entity_id</text>
+  <text x="890" y="710" font-family="Arial" font-size="12" text-anchor="end">uuid</text>
+  <text x="660" y="730" font-family="Arial" font-size="12">change_type</text>
+  <text x="890" y="730" font-family="Arial" font-size="12" text-anchor="end">varchar(50)</text>
+  <text x="660" y="750" font-family="Arial" font-size="12">details_json</text>
+  <text x="890" y="750" font-family="Arial" font-size="12" text-anchor="end">jsonb</text>
+  
+  <!-- Relationships -->
+  <!-- workflow_def to workflow_instance -->
+  <line x1="175" y1="230" x2="175" y2="350" stroke="#0066cc" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="175" cy="230" r="5" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+  <polygon points="170,340 175,350 180,340" fill="#0066cc" stroke="#0066cc" stroke-width="1"/>
+  
+  <!-- workflow_def to task_group_def -->
+  <line x1="300" y1="130" x2="350" y2="130" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="300" cy="130" r="5" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+  <polygon points="340,125 350,130 340,135" fill="#009933" stroke="#009933" stroke-width="1"/>
+  
+  <!-- task_group_def to task_def -->
+  <line x1="600" y1="130" x2="650" y2="130" stroke="#cc0066" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="600" cy="130" r="5" fill="white" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="640,125 650,130 640,135" fill="#cc0066" stroke="#cc0066" stroke-width="1"/>
+  
+  <!-- workflow_instance to task_group_instance -->
+  <line x1="300" y1="420" x2="350" y2="420" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="300" cy="420" r="5" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+  <polygon points="340,415 350,420 340,425" fill="#009933" stroke="#009933" stroke-width="1"/>
+  
+  <!-- task_group_instance to task_instance -->
+  <line x1="600" y1="420" x2="650" y2="420" stroke="#cc0066" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="600" cy="420" r="5" fill="white" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="640,415 650,420 640,425" fill="#cc0066" stroke="#cc0066" stroke-width="1"/>
+  
+  <!-- workflow_instance to workflow_execution_queue -->
+  <line x1="175" y1="550" x2="175" y2="680" stroke="#ff9933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <line x1="175" y1="680" x2="350" y2="680" stroke="#ff9933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="175" cy="550" r="5" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+  <polygon points="340,675 350,680 340,685" fill="#ff9933" stroke="#ff9933" stroke-width="1"/>
+  
+  <!-- workflow_instance to workflow_history -->
+  <line x1="175" y1="550" x2="175" y2="720" stroke="#6666cc" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <line x1="175" y1="720" x2="650" y2="720" stroke="#6666cc" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="175" cy="550" r="5" fill="white" stroke="#0066cc" stroke-width="1.5"/>
+  <polygon points="640,715 650,720 640,725" fill="#6666cc" stroke="#6666cc" stroke-width="1"/>
+  
+  <!-- Self-reference for task_group_definition -->
+  <path d="M 350 160 C 320 160 320 180 350 180" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5" fill="none"/>
+  <polygon points="350,180 340,175 340,185" fill="#009933" stroke="#009933" stroke-width="1"/>
+  
+  <!-- Self-reference for task_group_instance -->
+  <path d="M 350 460 C 320 460 320 480 350 480" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5" fill="none"/>
+  <polygon points="350,480 340,475 340,485" fill="#009933" stroke="#009933" stroke-width="1"/>
+  
+  <!-- task_group_def to task_group_instance -->
+  <line x1="475" y1="270" x2="475" y2="350" stroke="#009933" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="475" cy="270" r="5" fill="white" stroke="#009933" stroke-width="1.5"/>
+  <polygon points="470,340 475,350 480,340" fill="#009933" stroke="#009933" stroke-width="1"/>
+  
+  <!-- task_def to task_instance -->
+  <line x1="775" y1="250" x2="775" y2="350" stroke="#cc0066" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <circle cx="775" cy="250" r="5" fill="white" stroke="#cc0066" stroke-width="1.5"/>
+  <polygon points="770,340 775,350 780,340" fill="#cc0066" stroke="#cc0066" stroke-width="1"/>
+</svg>

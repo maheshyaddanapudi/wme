@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800">
+    <!-- Background -->
+    <rect width="1000" height="800" fill="white"/>
+    
+    <!-- Title -->
+    <text x="500" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Nested Task Group Structures</text>
+    
+    <!-- Example 1: Vertical Group with Horizontal Subgroups -->
+    <text x="250" y="90" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Example 1: Vertical Group with Horizontal Subgroups</text>
+    
+    <!-- Main Vertical Group -->
+    <rect x="100" y="110" width="300" height="280" rx="10" fill="#e6f0ff" stroke="#3366cc" stroke-width="2"/>
+    <text x="250" y="130" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#3366cc">Vertical Group</text>
+    
+    <!-- Horizontal Subgroup 1 -->
+    <rect x="125" y="140" width="250" height="80" rx="8" fill="#e6ffe6" stroke="#339933" stroke-width="2"/>
+    <text x="250" y="160" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#339933">Horizontal Group 1</text>
+    
+    <!-- Tasks in Horizontal Subgroup 1 -->
+    <rect x="135" y="170" width="70" height="40" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="170" y="195" font-family="Arial" font-size="12" text-anchor="middle">Task A</text>
+    
+    <rect x="215" y="170" width="70" height="40" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="250" y="195" font-family="Arial" font-size="12" text-anchor="middle">Task B</text>
+    
+    <rect x="295" y="170" width="70" height="40" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="330" y="195" font-family="Arial" font-size="12" text-anchor="middle">Task C</text>
+    
+    <!-- Horizontal Subgroup 2 -->
+    <rect x="125" y="230" width="250" height="80" rx="8" fill="#e6ffe6" stroke="#339933" stroke-width="2"/>
+    <text x="250" y="250" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#339933">Horizontal Group 2</text>
+    
+    <!-- Tasks in Horizontal Subgroup 2 -->
+    <rect x="135" y="260" width="70" height="40" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="170" y="285" font-family="Arial" font-size="12" text-anchor="middle">Task D</text>
+    
+    <rect x="215" y="260" width="70" height="40" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="250" y="285" font-family="Arial" font-size="12" text-anchor="middle">Task E</text>
+    
+    <rect x="295" y="260" width="70" height="40" rx="5" fill="#ccffcc" stroke="#339933" stroke-width="1.5"/>
+    <text x="330" y="285" font-family="Arial" font-size="12" text-anchor="middle">Task F</text>
+    
+    <!-- Individual Task -->
+    <rect x="125" y="320" width="250" height="40" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="250" y="345" font-family="Arial" font-size="14" text-anchor="middle">Individual Task G</text>
+    
+    <!-- Vertical Flow Arrows -->
+    <line x1="250" y1="220" x2="250" y2="230" stroke="#3366cc" stroke-width="2"/>
+    <polygon points="250,230 245,220 255,220" fill="#3366cc"/>
+    
+    <line x1="250" y1="310" x2="250" y2="320" stroke="#3366cc" stroke-width="2"/>
+    <polygon points="250,320 245,310 255,310" fill="#3366cc"/>
+    
+    <!-- Example 1 Description -->
+    <text x="250" y="390" font-family="Arial" font-size="14" text-anchor="middle">Horizontal groups execute in sequence within vertical container</text>
+    <text x="250" y="410" font-family="Arial" font-size="14" text-anchor="middle">Each horizontal group must complete before the next begins</text>
+    
+    <!-- Example 2: Horizontal Group with Vertical Subgroups -->
+    <text x="750" y="90" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Example 2: Horizontal Group with Vertical Subgroups</text>
+    
+    <!-- Main Horizontal Group -->
+    <rect x="600" y="110" width="300" height="280" rx="10" fill="#e6ffe6" stroke="#339933" stroke-width="2"/>
+    <text x="750" y="130" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#339933">Horizontal Group</text>
+    
+    <!-- Vertical Subgroup 1 -->
+    <rect x="615" y="140" width="120" height="230" rx="8" fill="#e6f0ff" stroke="#3366cc" stroke-width="2"/>
+    <text x="675" y="160" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#3366cc">Vertical Group 1</text>
+    
+    <!-- Tasks in Vertical Subgroup 1 -->
+    <rect x="625" y="170" width="100" height="40" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="675" y="195" font-family="Arial" font-size="12" text-anchor="middle">Task 1</text>
+    
+    <rect x="625" y="230" width="100" height="40" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="675" y="255" font-family="Arial" font-size="12" text-anchor="middle">Task 2</text>
+    
+    <rect x="625" y="290" width="100" height="40" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="675" y="315" font-family="Arial" font-size="12" text-anchor="middle">Task 3</text>
+    
+    <!-- Vertical arrows for subgroup 1 -->
+    <line x1="675" y1="210" x2="675" y2="230" stroke="#3366cc" stroke-width="1.5"/>
+    <polygon points="675,230 670,220 680,220" fill="#3366cc"/>
+    
+    <line x1="675" y1="270" x2="675" y2="290" stroke="#3366cc" stroke-width="1.5"/>
+    <polygon points="675,290 670,280 680,280" fill="#3366cc"/>
+    
+    <!-- Vertical Subgroup 2 -->
+    <rect x="765" y="140" width="120" height="230" rx="8" fill="#e6f0ff" stroke="#3366cc" stroke-width="2"/>
+    <text x="825" y="160" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#3366cc">Vertical Group 2</text>
+    
+    <!-- Tasks in Vertical Subgroup 2 -->
+    <rect x="775" y="170" width="100" height="40" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="825" y="195" font-family="Arial" font-size="12" text-anchor="middle">Task 4</text>
+    
+    <rect x="775" y="230" width="100" height="40" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="825" y="255" font-family="Arial" font-size="12" text-anchor="middle">Task 5</text>
+    
+    <rect x="775" y="290" width="100" height="40" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="825" y="315" font-family="Arial" font-size="12" text-anchor="middle">Task 6</text>
+    
+    <!-- Vertical arrows for subgroup 2 -->
+    <line x1="825" y1="210" x2="825" y2="230" stroke="#3366cc" stroke-width="1.5"/>
+    <polygon points="825,230 820,220 830,220" fill="#3366cc"/>
+    
+    <line x1="825" y1="270" x2="825" y2="290" stroke="#3366cc" stroke-width="1.5"/>
+    <polygon points="825,290 820,280 830,280" fill="#3366cc"/>
+    
+    <!-- Example 2 Description -->
+    <text x="750" y="390" font-family="Arial" font-size="14" text-anchor="middle">Vertical groups execute in parallel within horizontal container</text>
+    <text x="750" y="410" font-family="Arial" font-size="14" text-anchor="middle">Each vertical group progresses independently</text>
+    
+    <!-- Example 3: Complex Multi-level Nesting -->
+    <text x="500" y="460" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Example 3: Complex Multi-level Nesting</text>
+    
+    <!-- Main Vertical Group -->
+    <rect x="250" y="480" width="500" height="300" rx="10" fill="#e6f0ff" stroke="#3366cc" stroke-width="2"/>
+    <text x="500" y="500" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#3366cc">Vertical Group</text>
+    
+    <!-- Individual Task -->
+    <rect x="280" y="510" width="440" height="40" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="500" y="535" font-family="Arial" font-size="14" text-anchor="middle">Individual Task X</text>
+    
+    <!-- Complex Horizontal Group -->
+    <rect x="280" y="570" width="440" height="160" rx="8" fill="#e6ffe6" stroke="#339933" stroke-width="2"/>
+    <text x="500" y="590" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#339933">Horizontal Group</text>
+    
+    <!-- Vertical Subgroup in Horizontal -->
+    <rect x="290" y="600" width="140" height="120" rx="5" fill="#e6f0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="360" y="620" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#3366cc">Vertical Subgroup</text>
+    
+    <!-- Tasks in Vertical Subgroup -->
+    <rect x="300" y="630" width="120" height="30" rx="3" fill="#cce0ff" stroke="#3366cc" stroke-width="1"/>
+    <text x="360" y="650" font-family="Arial" font-size="10" text-anchor="middle">Task Y1</text>
+    
+    <rect x="300" y="670" width="120" height="30" rx="3" fill="#cce0ff" stroke="#3366cc" stroke-width="1"/>
+    <text x="360" y="690" font-family="Arial" font-size="10" text-anchor="middle">Task Y2</text>
+    
+    <!-- Vertical arrow -->
+    <line x1="360" y1="660" x2="360" y2="670" stroke="#3366cc" stroke-width="1"/>
+    <polygon points="360,670 355,660 365,660" fill="#3366cc"/>
+    
+    <!-- Individual Tasks in Horizontal -->
+    <rect x="440" y="630" width="120" height="70" rx="3" fill="#ccffcc" stroke="#339933" stroke-width="1"/>
+    <text x="500" y="670" font-family="Arial" font-size="10" text-anchor="middle">Task Z (Individual)</text>
+    
+    <!-- Nested Horizontal in Horizontal -->
+    <rect x="570" y="600" width="140" height="120" rx="5" fill="#ffe6e6" stroke="#cc3366" stroke-width="1.5"/>
+    <text x="640" y="620" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#cc3366">Horizontal Subgroup</text>
+    
+    <!-- Tasks in Nested Horizontal -->
+    <rect x="580" y="630" width="55" height="30" rx="3" fill="#ffcccc" stroke="#cc3366" stroke-width="1"/>
+    <text x="607" y="650" font-family="Arial" font-size="10" text-anchor="middle">Task W1</text>
+    
+    <rect x="580" y="670" width="55" height="30" rx="3" fill="#ffcccc" stroke="#cc3366" stroke-width="1"/>
+    <text x="607" y="690" font-family="Arial" font-size="10" text-anchor="middle">Task W2</text>
+    
+    <rect x="645" y="630" width="55" height="30" rx="3" fill="#ffcccc" stroke="#cc3366" stroke-width="1"/>
+    <text x="672" y="650" font-family="Arial" font-size="10" text-anchor="middle">Task W3</text>
+    
+    <rect x="645" y="670" width="55" height="30" rx="3" fill="#ffcccc" stroke="#cc3366" stroke-width="1"/>
+    <text x="672" y="690" font-family="Arial" font-size="10" text-anchor="middle">Task W4</text>
+    
+    <!-- Individual Task -->
+    <rect x="280" y="740" width="440" height="30" rx="5" fill="#cce0ff" stroke="#3366cc" stroke-width="1.5"/>
+    <text x="500" y="760" font-family="Arial" font-size="14" text-anchor="middle">Final Individual Task</text>
+    
+    <!-- Vertical Flow Arrows -->
+    <line x1="500" y1="550" x2="500" y2="570" stroke="#3366cc" stroke-width="2"/>
+    <polygon points="500,570 495,560 505,560" fill="#3366cc"/>
+    
+    <line x1="500" y1="730" x2="500" y2="740" stroke="#3366cc" stroke-width="2"/>
+    <polygon points="500,740 495,730 505,730" fill="#3366cc"/>
+    
+    <!-- Legend -->
+    <rect x="850" y="700" width="120" height="80" rx="5" fill="white" stroke="#999999" stroke-width="1"/>
+    <text x="910" y="720" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Legend</text>
+    
+    <rect x="860" y="730" width="20" height="10" fill="#e6f0ff" stroke="#3366cc" stroke-width="1"/>
+    <text x="920" y="740" font-family="Arial" font-size="10" text-anchor="middle">Vertical Group</text>
+    
+    <rect x="860" y="750" width="20" height="10" fill="#e6ffe6" stroke="#339933" stroke-width="1"/>
+    <text x="920" y="760" font-family="Arial" font-size="10" text-anchor="middle">Horizontal Group</text>
+    
+    <rect x="860" y="770" width="20" height="10" fill="#ffe6e6" stroke="#cc3366" stroke-width="1"/>
+    <text x="920" y="780" font-family="Arial" font-size="10" text-anchor="middle">Nested Horizontal</text>
+</svg>

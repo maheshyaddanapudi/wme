@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Workflow Execution Lifecycle</text>
+
+  <!-- Main States Section -->
+  <text x="600" y="80" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Workflow State Transitions</text>
+  
+  <!-- States -->
+  <!-- NOT_STARTED -->
+  <circle cx="200" cy="200" r="60" fill="#e6f2ff" stroke="#0066cc" stroke-width="2.5"/>
+  <text x="200" y="205" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">NOT_STARTED</text>
+  
+  <!-- RUNNING -->
+  <circle cx="450" cy="200" r="60" fill="#ffe6cc" stroke="#ff9933" stroke-width="2.5"/>
+  <text x="450" y="205" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">RUNNING</text>
+  
+  <!-- PAUSED -->
+  <circle cx="700" cy="200" r="60" fill="#ffe6cc" stroke="#ff9933" stroke-width="2.5"/>
+  <text x="700" y="205" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">PAUSED</text>
+  
+  <!-- COMPLETED -->
+  <circle cx="325" cy="400" r="60" fill="#e6ffe6" stroke="#009933" stroke-width="2.5"/>
+  <text x="325" y="405" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">COMPLETED</text>
+  
+  <!-- FAILED -->
+  <circle cx="575" cy="400" r="60" fill="#ffe6e6" stroke="#cc0000" stroke-width="2.5"/>
+  <text x="575" y="405" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">FAILED</text>
+  
+  <!-- TERMINATED -->
+  <circle cx="825" cy="400" r="60" fill="#ffe6e6" stroke="#cc0000" stroke-width="2.5"/>
+  <text x="825" y="405" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">TERMINATED</text>
+  
+  <!-- ARCHIVED -->
+  <circle cx="575" cy="580" r="60" fill="#e6e6e6" stroke="#666666" stroke-width="2.5"/>
+  <text x="575" y="585" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">ARCHIVED</text>
+  
+  <!-- Transitions -->
+  <!-- NOT_STARTED to RUNNING -->
+  <line x1="260" y1="200" x2="390" y2="200" stroke="#666666" stroke-width="2"/>
+  <polygon points="390,200 380,195 380,205" fill="#666666"/>
+  <text x="325" y="185" font-family="Arial" font-size="14" text-anchor="middle">startWorkflow()</text>
+  
+  <!-- RUNNING to PAUSED -->
+  <line x1="510" y1="200" x2="640" y2="200" stroke="#666666" stroke-width="2"/>
+  <polygon points="640,200 630,195 630,205" fill="#666666"/>
+  <text x="575" y="185" font-family="Arial" font-size="14" text-anchor="middle">pauseWorkflow()</text>
+  
+  <!-- PAUSED to RUNNING -->
+  <line x1="640" y1="220" x2="510" y2="220" stroke="#666666" stroke-width="2"/>
+  <polygon points="510,220 520,215 520,225" fill="#666666"/>
+  <text x="575" y="240" font-family="Arial" font-size="14" text-anchor="middle">resumeWorkflow()</text>
+  
+  <!-- RUNNING to COMPLETED -->
+  <line x1="415" y1="250" x2="360" y2="340" stroke="#009933" stroke-width="2"/>
+  <polygon points="360,340 363,330 370,337" fill="#009933"/>
+  <text x="350" y="300" font-family="Arial" font-size="14" fill="#009933" text-anchor="middle">all groups completed</text>
+  
+  <!-- RUNNING to FAILED -->
+  <line x1="485" y1="250" x2="540" y2="340" stroke="#cc0000" stroke-width="2"/>
+  <polygon points="540,340 533,330 543,332" fill="#cc0000"/>
+  <text x="540" y="300" font-family="Arial" font-size="14" fill="#cc0000" text-anchor="middle">exception/critical failure</text>
+  
+  <!-- RUNNING to TERMINATED -->
+  <line x1="510" y1="200" x2="765" y2="360" stroke="#cc0000" stroke-width="2"/>
+  <polygon points="765,360 755,355 760,345" fill="#cc0000"/>
+  <text x="650" y="270" font-family="Arial" font-size="14" fill="#cc0000" text-anchor="middle">terminateWorkflow()</text>
+  
+  <!-- PAUSED to TERMINATED -->
+  <line x1="750" y1="230" x2="795" y2="340" stroke="#cc0000" stroke-width="2"/>
+  <polygon points="795,340 790,330 800,335" fill="#cc0000"/>
+  <text x="790" y="290" font-family="Arial" font-size="14" fill="#cc0000" text-anchor="middle">terminateWorkflow()</text>
+  
+  <!-- ANY to ARCHIVED -->
+  <line x1="325" y1="460" x2="525" y2="540" stroke="#666666" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="525,540 515,535 520,525" fill="#666666"/>
+  
+  <line x1="575" y1="460" x2="575" y2="520" stroke="#666666" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="575,520 570,510 580,510" fill="#666666"/>
+  
+  <line x1="825" y1="460" x2="625" y2="540" stroke="#666666" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="625,540 635,535 630,525" fill="#666666"/>
+  
+  <text x="575" y="500" font-family="Arial" font-size="14" text-anchor="middle">archiveWorkflow()</text>
+  
+  <!-- State Details Section -->
+  <text x="975" y="80" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">State Details</text>
+  
+  <!-- State details boxes -->
+  <rect x="850" y="120" width="250" height="180" rx="10" fill="#e6f2ff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="975" y="145" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">NOT_STARTED</text>
+  <line x1="850" y1="155" x2="1100" y2="155" stroke="#0066cc" stroke-width="1"/>
+  <text x="860" y="175" font-family="Arial" font-size="12">• Initial state after creation</text>
+  <text x="860" y="195" font-family="Arial" font-size="12">• Workflow definition loaded</text>
+  <text x="860" y="215" font-family="Arial" font-size="12">• Task groups defined but not started</text>
+  <text x="860" y="235" font-family="Arial" font-size="12">• All input parameters validated</text>
+  <text x="860" y="255" font-family="Arial" font-size="12">• Ready for execution</text>
+  <text x="860" y="275" font-family="Arial" font-size="12">• No tasks or groups instantiated yet</text>
+  
+  <rect x="850" y="320" width="250" height="180" rx="10" fill="#ffe6cc" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="975" y="345" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">RUNNING</text>
+  <line x1="850" y1="355" x2="1100" y2="355" stroke="#ff9933" stroke-width="1"/>
+  <text x="860" y="375" font-family="Arial" font-size="12">• Workflow actively processing</text>
+  <text x="860" y="395" font-family="Arial" font-size="12">• Task groups and tasks instantiated</text>
+  <text x="860" y="415" font-family="Arial" font-size="12">• Eligible tasks in execution</text>
+  <text x="860" y="435" font-family="Arial" font-size="12">• State managed by WorkflowStateManager</text>
+  <text x="860" y="455" font-family="Arial" font-size="12">• Receives periodic updates via sweeper</text>
+  <text x="860" y="475" font-family="Arial" font-size="12">• Progresses through task groups</text>
+  
+  <rect x="850" y="520" width="250" height="180" rx="10" fill="#ffe6cc" stroke="#ff9933" stroke-width="1.5"/>
+  <text x="975" y="545" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">PAUSED</text>
+  <line x1="850" y1="555" x2="1100" y2="555" stroke="#ff9933" stroke-width="1"/>
+  <text x="860" y="575" font-family="Arial" font-size="12">• Workflow execution suspended</text>
+  <text x="860" y="595" font-family="Arial" font-size="12">• No new tasks are started</text>
+  <text x="860" y="615" font-family="Arial" font-size="12">• In-flight tasks allowed to complete</text>
+  <text x="860" y="635" font-family="Arial" font-size="12">• Maintains execution state</text>
+  <text x="860" y="655" font-family="Arial" font-size="12">• Can be resumed or terminated</text>
+  <text x="860" y="675" font-family="Arial" font-size="12">• Not picked up by sweeper process</text>
+  
+  <!-- Execution Processing Section -->
+  <rect x="120" y="680" width="700" height="200" rx="10" fill="#f9f9f9" stroke="#666666" stroke-width="2"/>
+  <text x="470" y="705" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Workflow Execution Processing</text>
+  <line x1="120" y1="715" x2="820" y2="715" stroke="#666666" stroke-width="1"/>
+  
+  <!-- Three execution components -->
+  <rect x="140" y="730" width="200" height="120" rx="8" fill="#e6f0ff" stroke="#3366cc" stroke-width="1.5"/>
+  <text x="240" y="750" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">WorkflowExecutionSweeper</text>
+  <line x1="140" y1="760" x2="340" y2="760" stroke="#3366cc" stroke-width="1"/>
+  <text x="150" y="780" font-family="Arial" font-size="12">• Polls execution queue table</text>
+  <text x="150" y="800" font-family="Arial" font-size="12">• Runs on schedule (10s)</text>
+  <text x="150" y="820" font-family="Arial" font-size="12">• Processes queued workflows</text>
+  <text x="150" y="840" font-family="Arial" font-size="12">• Uses virtual thread pool</text>
+  
+  <rect x="370" y="730" width="200" height="120" rx="8" fill="#e6f0ff" stroke="#3366cc" stroke-width="1.5"/>
+  <text x="470" y="750" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">WorkflowStateManager</text>
+  <line x1="370" y1="760" x2="570" y2="760" stroke="#3366cc" stroke-width="1"/>
+  <text x="380" y="780" font-family="Arial" font-size="12">• Determines next step</text>
+  <text x="380" y="800" font-family="Arial" font-size="12">• Checks task completion status</text>
+  <text x="380" y="820" font-family="Arial" font-size="12">• Starts eligible tasks/groups</text>
+  <text x="380" y="840" font-family="Arial" font-size="12">• Updates workflow status</text>
+  
+  <rect x="600" y="730" width="200" height="120" rx="8" fill="#e6f0ff" stroke="#3366cc" stroke-width="1.5"/>
+  <text x="700" y="750" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">ExecutionQueuingInterceptor</text>
+  <line x1="600" y1="760" x2="800" y2="760" stroke="#3366cc" stroke-width="1"/>
+  <text x="610" y="780" font-family="Arial" font-size="12">• Adds workflows to queue</text>
+  <text x="610" y="800" font-family="Arial" font-size="12">• Called after task completion</text>
+  <text x="610" y="820" font-family="Arial" font-size="12">• Sets priority and status</text>
+  <text x="610" y="840" font-family="Arial" font-size="12">• Avoids redundant entries</text>
+  
+  <!-- Arrows connecting components -->
+  <path d="M 240,850 L 240,860 L 470,860 L 470,850" stroke="#3366cc" stroke-width="1.5" fill="none"/>
+  <polygon points="470,850 465,855 475,855" fill="#3366cc"/>
+  <text x="355" y="875" font-family="Arial" font-size="12" text-anchor="middle">calls for each queued workflow</text>
+  
+  <path d="M 700,850 L 700,860 L 470,860" stroke="#3366cc" stroke-width="1.5" fill="none" stroke-dasharray="4,2"/>
+  <text x="585" y="875" font-family="Arial" font-size="12" text-anchor="middle">feeds workflows to process</text>
+  
+  <!-- Legend -->
+  <rect x="850" y="760" width="250" height="120" rx="5" fill="#f9f9f9" stroke="#666666" stroke-width="1"/>
+  <text x="975" y="780" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Legend</text>
+  
+  <circle cx="870" y="805" r="8" fill="#e6f2ff" stroke="#0066cc" stroke-width="2"/>
+  <text x="890" y="810" font-family="Arial" font-size="12" text-anchor="start">Initial State</text>
+  
+  <circle cx="870" y="830" r="8" fill="#ffe6cc" stroke="#ff9933" stroke-width="2"/>
+  <text x="890" y="835" font-family="Arial" font-size="12" text-anchor="start">Active State</text>
+  
+  <circle cx="870" y="855" r="8" fill="#e6ffe6" stroke="#009933" stroke-width="2"/>
+  <text x="890" y="860" font-family="Arial" font-size="12" text-anchor="start">Success Terminal State</text>
+  
+  <circle cx="980" y="805" r="8" fill="#ffe6e6" stroke="#cc0000" stroke-width="2"/>
+  <text x="1000" y="810" font-family="Arial" font-size="12" text-anchor="start">Error Terminal State</text>
+  
+  <circle cx="980" y="830" r="8" fill="#e6e6e6" stroke="#666666" stroke-width="2"/>
+  <text x="1000" y="835" font-family="Arial" font-size="12" text-anchor="start">Archived State</text>
+</svg>
