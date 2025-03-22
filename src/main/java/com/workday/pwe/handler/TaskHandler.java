@@ -1,7 +1,7 @@
 package com.workday.pwe.handler;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.workday.pwe.dao.TaskDAO;
+import com.workday.pwe.dao.TaskInstanceDAP;
 import com.workday.pwe.enums.TaskStatus;
 import com.workday.pwe.execution.ExecutionQueuingInterceptor;
 import com.workday.pwe.model.TaskInstance;
@@ -59,7 +59,8 @@ public abstract class TaskHandler {
      */
     private final void moveToInProgress(Connection connection) {
         try {
-            new TaskDAO(connection).updateTask(taskInstance.getId(), TaskStatus.IN_PROGRESS);
+            TaskInstanceDAO taskInstanceDAO = new TaskInstanceDAO(connection);
+            taskInstanceDAO.updateTask(taskInstance.getId(), TaskStatus.IN_PROGRESS);
             LOGGER.info("Task moved to IN_PROGRESS: " + taskInstance.getId());
         } catch (Exception e) {
             throw new RuntimeException("Error updating task to IN_PROGRESS", e);
