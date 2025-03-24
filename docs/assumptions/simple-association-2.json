@@ -1,0 +1,23 @@
+{
+  "dimId": 2,
+  "type": "level",
+  "associations": {
+    "ToDoers": [
+      { "associationId": 103, "type": "user" },
+      { "associationId": 102, "type": "group" }
+    ],
+    "SubmitApproveGroup": [
+      {
+        "Submitter": { "associationId": 601, "type": "user" },
+        "Approver": { "associationId": 701, "type": "user" }
+      },
+      {
+        "Submitter": { "associationId": 602, "type": "user" },
+        "Approver": { "associationId": 702, "type": "user" }
+      }
+    ],
+    "Reviewers": [
+      { "associationId": 801, "type": "group" }
+    ]
+  }
+}
