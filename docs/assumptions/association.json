@@ -1,0 +1,79 @@
+[
+  {
+    "dimId": 1,
+    "type": "level",
+    "associations": {
+      "ToDoers": [
+        { "associationId": 101, "type": "group" },
+        { "associationId": 102, "type": "group" }
+      ],
+      "SubmitApproveGroup": [
+        {
+          "Submitter": { "associationId": 201, "type": "user" },
+          "Approver": { "associationId": 301, "type": "user" }
+        },
+        {
+          "Submitter": { "associationId": 202, "type": "user" },
+          "Approver": { "associationId": 301, "type": "user" }
+        },
+        {
+          "Submitter": { "associationId": 203, "type": "user" },
+          "Approver": { "associationId": 302, "type": "user" }
+        }
+      ],
+      "Reviewers": [
+        { "associationId": 401, "type": "user" }
+      ]
+    }
+  },
+  {
+    "dimId": 2,
+    "type": "level",
+    "associations": {
+      "ToDoers": [
+        { "associationId": 103, "type": "user" },
+        { "associationId": 102, "type": "group" }
+      ],
+      "SubmitApproveGroup": [
+        {
+          "Submitter": { "associationId": 601, "type": "user" },
+          "Approver": { "associationId": 701, "type": "user" }
+        },
+        {
+          "Submitter": { "associationId": 602, "type": "user" },
+          "Approver": { "associationId": 702, "type": "user" }
+        }
+      ],
+      "Reviewers": [
+        { "associationId": 801, "type": "group" }
+      ]
+    }
+  },
+  {
+    "dimId": 3,
+    "type": "dimension",
+    "associations": {
+      "ToDoers": [
+        { "associationId": 101, "type": "group" },
+        { "associationId": 104, "type": "user" }
+      ],
+      "SubmitApproveGroup": [
+        {
+          "Submitter": { "associationId": 601, "type": "user" },
+          "Approver": { "associationId": 701, "type": "user" }
+        },
+        {
+          "Submitter": { "associationId": 602, "type": "user" },
+          "Approver": { "associationId": 702, "type": "user" }
+        },
+        {
+          "Submitter": { "associationId": 603, "type": "user" },
+          "Approver": { "associationId": 703, "type": "user" }
+        }
+      ],
+      "Reviewers": [
+        { "associationId": 801, "type": "group" }
+      ]
+    }
+  }
+]
