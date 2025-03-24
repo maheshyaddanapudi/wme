@@ -1,0 +1,27 @@
+{
+  "dimId": 3,
+  "type": "dimension",
+  "associations": {
+    "ToDoers": [
+      { "associationId": 101, "type": "group" },
+      { "associationId": 104, "type": "user" }
+    ],
+    "SubmitApproveGroup": [
+      {
+        "Submitter": { "associationId": 601, "type": "user" },
+        "Approver": { "associationId": 701, "type": "user" }
+      },
+      {
+        "Submitter": { "associationId": 602, "type": "user" },
+        "Approver": { "associationId": 702, "type": "user" }
+      },
+      {
+        "Submitter": { "associationId": 603, "type": "user" },
+        "Approver": { "associationId": 703, "type": "user" }
+      }
+    ],
+    "Reviewers": [
+      { "associationId": 801, "type": "group" }
+    ]
+  }
+}
